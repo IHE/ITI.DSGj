@@ -26,7 +26,7 @@
           </div>
           <div class="top-bar-right hide-for-small-only">
             <ul class="menu">
-              <li class="menu-text tf-version">IHE IT Infrastructure (ITI) Technical Framework, Volume <span id="volumeNo"></span><br />Revision 20.0, August 4, 2023 – Final Text</li>
+              <li class="menu-text tf-version">IHE IT Infrastructure (ITI) Technical Framework, Volume <span id="volumeNo"></span><br /><mark>Revision 20.0, August 4, 2023 – Final Text</mark></li>
             </ul>
               <ul class="menu align-right">
                     <li><input id="ihe-search-field" type="search" placeholder="Search"></li>
@@ -62,7 +62,7 @@
           </div>
           <div id="main-top" class="cell medium-10 large-10">
       <h2 id="5.5">5.5Document Digital Signature (DSG) Document Content</h2>
-      <p>Document Digital Signature content shall conform to XAdES schema for signatures, with extensions and restrictions defined in the following. IHE is not changing any optionality, prohibiting use of options, or mandating options. Issues such as long-term archival management of certificates are out of scope of this profile.</p>
+      <p>Document Digital Signature content shall conform to <mark>XAdES or JAdES</mark> schema for signatures, with extensions and restrictions defined in the following. IHE is not changing any optionality, prohibiting use of options, or mandating options. Issues such as long-term archival management of certificates are out of scope of this profile.</p>
       <h3 id="5.5.1">5.5.1 References</h3>
       <h4 id="5.5.1.1">5.5.1.1 Normative References</h4>
       <p>
@@ -342,7 +342,7 @@
       <h5 id="5.5.6.1.5">5.5.6.1.5 XDSDocumentEntry.eventCodeList</h5>
       <p>The eventCodeList shall contain the signature Purpose(s) from the Digital Signature block “CommitmentTypeIndication” element, using Table 5.5.2-1.</p>
       <h5 id="5.5.6.1.6">5.5.6.1.6 XDSDocumentEntry.mimeType</h5>
-      <p>Shall be “text/xml”</p>
+      <p><mark>Shall be “text/xml” for XML options and "application/json" for JSON options</mark></p>
       <h5 id="5.5.6.1.7">5.5.6.1.7 XDSDocumentEntry.title</h5>
       <p>Should be the same as the display name for the signature purpose</p>
       <h5 id="5.5.6.1.8">5.5.6.1.8 XDSDocumentEntry.language</h5>
@@ -355,7 +355,7 @@
       <p>When Detached Signature Option is used, the Content Creator shall use the “SIGNS” associationType Document Relationship to associate the signature (sourceObject) to the documents that it signs (targetObjects). See Section 4.2.2.</p>
       <p>When SubmissionSet Signature Option is used, the Content Creator may use the “SIGNS” associationType Document Relationship to associate the signature (sourceObject) to the documents that it signs (targetObjects). See Section 4.2.2.</p>
       <h3 id="5.5.7">5.5.7 Security Considerations</h3>
-      <p>See XAdES specification for risk assessment and mitigation plan on Digital Signatures.</p>
+      <p><mark>See XAdES/JAdES specification for risk assessment and mitigation plan on Digital Signatures.</mark></p>
       <h4 id="5.5.7.1">5.5.7.1 Content Creator</h4>
       <p>When a Content Creator is grouped with an ATNA Secure Node or Secure Application, it shall create an Audit Message indicating the Signature Creation event.</p>
       <table cellspacing="0" cellpadding="0">
@@ -470,6 +470,98 @@
           <td colspan="4">ParticipantObjectIdentification (Digital Signature Document) (1)</td>
         </tr>
       </table>
+      <h3 id="5.5.8">5.5.8 JSON Signature Specification</h3>
+      <p>The following constraints define the <mark>Digital Signature</mark> block. This block is common to the detached signature and Enveloping signature.</p>
+      <ul>
+        <li class="bullet-list1">Shall conform to JAdES-B-LT – for support of Long Term signatures. The JAdES-B-LT specification adds the timestamp of the signing and inclusion of the certificate and statement of revocation.</li>
+      </ul>
+      <ul>
+        <li>
+          <p><strong>SHALL</strong> use JSON Web Signature (JWS)(see <a href="https://tools.ietf.org/html/rfc7515">RFC 7515</a>)
+      JSON Web Signature (JWS) is a means of representing content secured with digital signatures or Hash-based Message Authentication Codes (HMACs) using JSON data structures. Cryptographic algorithms and identifiers used with this specification are enumerated in the separate JSON Web Algorithms (JWA). <sup id="fnref:fourth"><a href="#fn:fourth" class="footnote">4</a></sup></p>
+      
+          <p class="bg-warning">Implementers that support XML must be aware that JSON Web Signatures can only be created and validated in the original native JSON. Transforms to and from XML will invalidate signatures.</p>
+        </li>
+        <li>
+          <p><a href="http://hl7.org/fhir/datatypes.html#JSON">JSON Signature rules</a> specified in the FHIR specification. (reproduced below for reader convenience):
+      When the signature is a JSON Digital Signature (contentType = application/jose), the following rules apply:</p>
+          <ul>
+            <li>The Signature.data is base64 encoded JWS-Signature <a href="https://tools.ietf.org/html/rfc7515">RFC 7515: JSON Web Signature (JWS)</a></li>
+            <li>The signature is a <a href="https://tools.ietf.org/html/rfc7515#appendix-F">Detached</a> Signature (where the content that is signed is removed from the JWS)</li>
+            <li>When FHIR Resources are signed, the signature is across the <a href="http://hl7.org/fhir/R4/json.html#canonical">Canonical JSON</a> form of the resource(s)</li>
+            <li>The Signature <strong>SHOULD</strong> use the hashing algorithm SHA256. The signature validation policy will apply to the signature and determine the acceptability</li>
+        </li>
+        <li class="bullet-list1"><mark>Shall use the hash algorithm sha256.</mark></li>
+        <li class="bullet-list1">
+          <span><mark>Shall use the canonicalization algorithm “Canonical XML 1.1 with Comments” </mark>(</span>
+          <a href="http://www.w3.org/2006/12/xml-c14n11#WithComments">http://www.w3.org/2006/12/xml-c14n11#WithComments</a>
+          <span>).</span>
+        </li>
+        <li class="bullet-list1">
+          <span>The policy may be identified as</span>
+          <span style="font-weight:bold">urn:ihe:iti:dsg:detached:2014</span>
+          <span>when the signature document is a Detached Signature and</span>
+          <span style="font-weight:bold">urn:ihe:iti:dsg:enveloping:2014</span>
+          <span>when the signature document is an Enveloping Signature to indicate that the signature document complies with the DSG Profile.</span>
+        </li>
+        </ul>
+      </ul>
+      <p>
+        <span>The Signature <strong>SHALL</strong> include a “CommitmentTypeIndication” element for the Purpose(s) of Signature (aka purposeOfSignature). The Purpose can be the action being attested to, or the role associated with the signature. The value  should come from ASTM E1762-95(2013) if applicable, and reproduced in <a href="#t5.5.2-1">Table 5.5.2-1</a>. The coding scheme for ASTM is “1.2.840.10065.1.12”.The <code class="highlighter-rouge">Signature.type</code> shall contain the same values as the CommitmentTypeIndication element.</li></span>
+      </br></br>
+        <a name="_Toc237310005">
+          <span><mark>Note that Content Creators and Content Consumers should be capable of being configured to other conformance policies to support local policy. For example, some environments may choose a different XAdES profile, hashing algorithm, policy identifier, or signature purpose vocabulary. Content Creators would thus create Digital Signature blocks that are not conformant to this profile. Content Consumers can validate these Digital Signature blocks, and be capable of configured behavior according to the local policy.</mark></span>
+        </a>
+      </p>
+      <p>Some regions also require conformance to ISO 17090, which includes additional Certificate issuing, content, and validation rules.</p>      
+      <h3 id="5.5.9">5.5.9 JSON Detached Signature</h3>
+      <p>The Detached Signature utilizes the XML Signature - Reference element (ds:reference) to identify and provide a hash for each document that is signed. This set of Reference elements is considered the manifest. The URI attribute shall be used and hold the document uniqueID. For documents that do not use a URI as the uniqueId, the Affinity Domain should determine an appropriate way to encode the DocumentEntry.uniqueId.</p>
+      <h4 id="5.5.9.1">5.5.9.1 JSON SubmissionSet Signature</h4>
+      <p>The SubmissionSet Signature is a variant of the Detached Signature used to digitally sign a complete SubmissionSet. The signature can later be validated to assure that the SubmissionSet is complete and the same as when it was created.</p>
+      <p>The SubmissionSet Signature shall be a Detached Signature that has Reference elements for:</p>
+      <ul>
+        <li class="bullet-list1">the SubmissionSet uniqueID with a hash value of “0”</li>
+        <li class="bullet-list1">the document uniqueID for each of the documents contained in the SubmissionSet not including the SubmissionSet Signature document</li>
+      </ul>
+      <p>The SubmissionSet Signature creation is informatively described here with the Content Creator grouped with an XDS Document Source and is equally applicable with grouping the Content Creator with the other Document Sharing infrastructure (e.g., XDR, and XDM). The document publication transaction is not specific to the SubmissionSet Signature process or content, and is included here only to show overall workflow.</p>
+      <p>Informative process for creating a SubmissionSet Signature:</p>
+      <ol>
+        <li class="numbered-list1">A set (n) of Documents of interest are gathered, or generated to be published</li>
+        <li class="numbered-list1">A SubmissionSet is created for the Documents, for example in preparation for using the Provide and Register Document Set-b [ITI-41] transaction or equivalent</li>
+        <li class="numbered-list1">A Digital Signature document is created which includes Reference elements of:</li>
+      </ol>
+      <ol>
+        <li class="numbered-list2">The SubmissionSet.uniqueId is included in the manifest, with a zero hash value (the value “0”).</li>
+        <li class="numbered-list2">All of the (n) documents to be included in the SubmissionSet, other than the signature document, are listed in the manifest with their hash.</li>
+        <li class="numbered-list2">The signature document is processed according to Section 5.5.2, and thus signed.</li>
+      </ol>
+      <ol start="4">
+        <li class="numbered-list1">The signature document would be added to the SubmissionSet according to Section 5.5.6. The SubmissionSet may, but is not required, include all the “SIGNS” association defined in Section 5.5.6.4 with associations to all the other documents in the SubmissionSet. The “SIGNS” association is redundant in this case as the SubmissionSet already groups these documents.</li>
+        <li class="numbered-list1">The SubmissionSet with the (n) documents and the Digital Signature document is submitted using the Provide and Register Document Set-b [ITI-41] transaction, or equivalent from the other Document Sharing infrastructures.</li>
+      </ol>
+      <h3 id="5.5.10">5.5.10 JSON Enveloping Signature</h3>
+      <p>The Enveloping Signature utilizes the XML Signature – “Include” capability where the full content of the signed document is encoded inside the signature document in the Object element (ds:object).</p>
+      <p>The signed document shall be base64 encoded, unless some other policy overrides.</p>
+      <p>The object element Encoding shall be specified (http://www.w3.org/2000/09/xmldsig#base64).</p>
+      <h3 id="5.5.11">5.5.11 JSON Signature Verification</h3>
+      <p>There are three levels of signature verification:</p>
+      <ol>
+        <li class="numbered-list1">verifying that the Digital Signature block itself has integrity through verifying the signature across the JSON-Signature,</li>
+        <li class="numbered-list1">confirming that the signer was authentic, not revoked, and appropriate to the signature purpose,</li>
+        <li class="numbered-list1">confirming that the signed Documents of interest are unmodified using the hash algorithm.</li>
+      </ol>
+      <p>The Content Consumer shall verify the Digital Signature block has integrity.</p>
+      <p>The Content Consumer shall be able to be configured with local policy on PKI trust models, and management that supports the confirmation that the signer was authentic, not revoked, and appropriate to the signature purpose. The Content Consumer shall use this configuration when confirming the validity of the signature.</p>
+      <p>The Content Consumer shall be able to confirm the validity of the documents that are signed.</p>
+      <ul>
+        <li class="bullet-list1">Workflow or local policy may direct that all or a subset of the signed documents be validated. There are use cases where only one document within a signed set of documents is all that is called for by the workflow.</li>
+        <li class="bullet-list1">Workflow or local policy may direct that all or a subset of the signatures found within a Digital Signature Document be validated. The Digital Signature Document may contain signatures for purposes that are not relevant to the Content Consumer purpose that may not be possible to fully validate. A Content Consumer should silently ignore signatures that are not necessary to the purpose of the Content Consumer. For example, a signature may be from a different organization.</li>
+        <li class="bullet-list1">The document may not be accessible to the user, for example authorization denied, so confirmation of valid signed content may be impossible.</li>
+        <li class="bullet-list1">If there is a SubmissionSet unique ID included in the manifest, then the Content Consumer shall be able to verify that the submission set reference in the manifest is the one containing the documents which are listed in the manifest and the documents listed in the manifest are the complete list of documents in the submission set on the XDS Registry.</li>
+      </ul>
+      <p>The decision on what degree of verification is needed is determined by the application and use case.</p>
+      <p>The Content Consumer shall be able to validate content that uses SHA256 as well as SHA1.</p>
+
           </div>
         </div>
       </main>

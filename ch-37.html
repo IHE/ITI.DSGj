@@ -28,7 +28,7 @@
           </div>
           <div class="top-bar-right hide-for-small-only">
             <ul class="menu">
-              <li class="menu-text tf-version">IHE IT Infrastructure (ITI) Technical Framework, Volume <span id="volumeNo"></span><br />Revision 20.0, August 4, 2023 – Final Text</li>
+              <li class="menu-text tf-version">IHE IT Infrastructure (ITI) Technical Framework, Volume <span id="volumeNo"></span><br /><mark>Revision 20.0, August 4, 2023 – Final Text</mark></li>
             </ul>
               <ul class="menu align-right">
                     <li><input id="ihe-search-field" type="search" placeholder="Search"></li>
@@ -159,41 +159,77 @@
       </thead>
       <tbody>
         <tr>
-          <td rowspan="3">Content Creator (Note 1)</td>
+          <td rowspan="6">Content Creator (Note 1)</td>
           <td>Detached Signature</td>
           <td>
-            <a href="../Volume1/ch-37.html#37.2.1">ITI TF-1: 37.2.1</a>
+            <mark><a href="../Volume1/ch-37.html#37.2.1">ITI TF-1: 37.2.1</a></mark>
+          </td>
+        </tr>
+        <tr>
+          <td>JSON Detached Signature</td>
+          <td>
+            <mark><a href="../Volume1/ch-37.html#37.2.3">ITI TF-1: 37.2.3</a></mark>
           </td>
         </tr>
         <tr>
           <td>SubmissionSet Signature</td>
           <td>
-            <a href="../Volume1/ch-37.html#37.2.1.1">ITI TF-1: 37.2.1.1</a>
+            <mark><a href="../Volume1/ch-37.html#37.2.1.1">ITI TF-1: 37.2.1.1</a></mark>
+          </td>
+        </tr>
+        <tr>
+          <td>JSON SubmissionSet Signature</td>
+          <td>
+            <mark><a href="../Volume1/ch-37.html#37.2.3.1">ITI TF-1: 37.2.3.1</a></mark>
           </td>
         </tr>
         <tr>
           <td>Enveloping Signature</td>
           <td>
-            <a href="../Volume1/ch-37.html#37.2.2">ITI TF-1: 37.2.2</a>
+            <mark><a href="../Volume1/ch-37.html#37.2.2">ITI TF-1: 37.2.2</a></mark>
           </td>
         </tr>
         <tr>
-          <td rowspan="3">Content Consumer (Note 1)</td>
+          <td>JSON Enveloping Signature</td>
+          <td>
+            <mark><a href="../Volume1/ch-37.html#37.2.4">ITI TF-1: 37.2.4</a></mark>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="6">Content Consumer (Note 1)</td>
           <td>Detached Signature</td>
           <td>
-            <a href="../Volume1/ch-37.html#37.2.1">ITI TF-1: 37.2.1</a>
+            <mark><a href="../Volume1/ch-37.html#37.2.1">ITI TF-1: 37.2.1</a></mark>
+          </td>
+        </tr>
+        <tr>
+          <td>JSON Detached Signature</td>
+          <td>
+            <mark><a href="../Volume1/ch-37.html#37.2.3">ITI TF-1: 37.2.3</a></mark>
           </td>
         </tr>
         <tr>
           <td>SubmissionSet Signature</td>
           <td>
-            <a href="../Volume1/ch-37.html#37.2.1.1">ITI TF-1: 37.2.1.1</a>
+            <mark><a href="../Volume1/ch-37.html#37.2.1.1">ITI TF-1: 37.2.1.1</a></mark>
+          </td>
+        </tr>
+        <tr>
+          <td>JSON SubmissionSet Signature</td>
+          <td>
+            <mark><a href="../Volume1/ch-37.html#37.2.3.1">ITI TF-1: 37.2.3.1</a></mark>
           </td>
         </tr>
         <tr>
           <td>Enveloping Signature</td>
           <td>
-            <a href="../Volume1/ch-37.html#37.2.2">ITI TF-1: 37.2.2</a>
+            <mark><a href="../Volume1/ch-37.html#37.2.2">ITI TF-1: 37.2.2</a></mark>
+          </td>
+        </tr>
+        <tr>
+          <td>JSON Enveloping Signature</td>
+          <td>
+            <mark><a href="../Volume1/ch-37.html#37.2.4">ITI TF-1: 37.2.4</a></mark>
           </td>
         </tr>
       </tbody>
@@ -205,8 +241,7 @@
       Content Creators that support the Detached Signature Option shall have the capability to create a
       Detached Signature document that is composed of the Signature block as specified in
       <a href="../Volume3/ch-5.5.html#5.5.2">ITI TF-3: 5.5.2</a>
-      and 5.5.3, and a manifest of references to the signed documents. The signature document does not
-      include the content of the documents that are signed. The Detached Signature Option supports the
+      and <mark><a href="../Volume3/ch-5.5.html#5.5.3">ITI TF-3: 5.5.3</a></mark>, and a manifest of references to the signed documents. The signature document does not include the content of the documents that are signed. The Detached Signature Option supports the
       signing of multiple documents with one signature
       document.
     </p>
@@ -240,8 +275,7 @@
       Content Creators that support the Enveloping Signature Option shall have the capability to create
       an Enveloping Signature document that is composed of the signature block as specified in
       <a href="../Volume3/ch-5.5.html#5.5.2">ITI TF-3: 5.5.2</a>
-      and 5.5.4, and the document that is signed. The Enveloping Signature Option only supports one
-      document per signature document.
+      and <a href="../Volume3/ch-5.5.html#5.5.4">5.5.4</a>, and the document that is signed. The Enveloping Signature Option only supports one document per signature document.
     </p>
     <p>No guidance is given for use of Document Sharing with Enveloping Signatures. This is due to the
       fact that one document contains both signature and content; so it is unclear what the metadata
@@ -251,6 +285,58 @@
       Content Consumers that support the Enveloping Signature Option shall have the capability to
       perform signature verification specified in
       <a href="../Volume3/ch-5.5.html#5.5.5">ITI TF-3: 5.5.5</a>
+      for documents signed with an Enveloping Signature.
+    </p>
+    <h3 id="37.2.3">37.2.3 JSON Detached Signature Option</h3>
+    <p>
+      Content Creators that support the Detached Signature Option shall have the capability to create a
+      Detached Signature document that is composed of the <mark>Signature block</mark> as specified in
+      <a href="../Volume3/ch-5.5.html#5.5.8">ITI TF-3: 5.5.8</a>
+      and <a href="../Volume3/ch-5.5.html#5.5.9"> ITI TF-3: 5.5.9</a>, and a manifest of references to the signed documents. The signature document does not
+      include the content of the documents that are signed. The Detached Signature Option supports the
+      signing of multiple documents with one signature
+      document.
+    </p>
+    <p>
+      The digital signature document, when published using Document Sharing profiles (e.g., XDS, XDR,
+      XDM, XCA, etc.), shall conform to the Document Sharing metadata rules identified in
+      <a href="../Volume3/ch-5.5.html#5.5.6">ITI TF-3: 5.5.6</a>
+      .
+    </p>
+    <p>
+      Content Consumers that support the Detached Signature Option shall have the capability to perform
+      signature verification specified in
+      <a href="../Volume3/ch-5.5.html#5.5.11">ITI TF-3: 5.5.11</a>
+      for documents signed with a Detached Signature.
+    </p>
+    <h4 id="37.2.3.1">37.2.3.1 JSON SubmissionSet Signature Option</h4>
+    <p>The SubmissionSet Signature Option is a variant on the Detached Signature Option.</p>
+    <p>The Content Creator shall have the ability to create a Detached Signature document that includes
+      reference to all the documents included in the SubmissionSet, except for the Detached Signature
+      document itself; and a reference to the
+      SubmissionSet unique ID. This Detached Signature document is included in the SubmissionSet.</p>
+    <p>The SubmissionSet Signature Option requires the use of a Document Sharing Profile.</p>
+    <p>
+      Content Consumers that support the SubmissionSet Signature Option shall have the capability to
+      perform signature verification specified in
+      <a href="../Volume3/ch-5.5.html#5.5.11">ITI TF-3: 5.5.11</a>
+      for all the documents contained within the Detached Signature.
+    </p>
+    <h3 id="37.2.4">37.2.4 JSON Enveloping Signature Option</h3>
+    <p>
+      Content Creators that support the Enveloping Signature Option shall have the capability to create
+      an Enveloping Signature document that is composed of the signature block as specified in
+      <a href="../Volume3/ch-5.5.html#5.5.8">ITI TF-3: 5.5.8</a>
+      and <a href="../Volume3/ch-5.5.html#5.5.10">5.5.10</a>, and the document that is signed. The Enveloping Signature Option only supports one document per signature document.
+    </p>
+    <p>No guidance is given for use of Document Sharing with Enveloping Signatures. This is due to the
+      fact that one document contains both signature and content; so it is unclear what the metadata
+      should represent. XDS Affinity Domain or other
+      Policy Domain may provide the guidance.</p>
+    <p>
+      Content Consumers that support the Enveloping Signature Option shall have the capability to
+      perform signature verification specified in
+      <a href="../Volume3/ch-5.5.html#5.5.11">ITI TF-3: 5.5.11</a>
       for documents signed with an Enveloping Signature.
     </p>
     <h2 id="37.3">37.3 DSG Required Actor Groupings</h2>
