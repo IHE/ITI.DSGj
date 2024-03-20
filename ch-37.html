@@ -68,14 +68,14 @@
       The Document Digital Signature (DSG) Profile defines general purpose methods
         of digitally signing of documents for communication and persistence. Among other uses, these
         methods can be used within an IHE Document Sharing
-        infrastructure (e.g., XDS, XCA, XDM, XDR, and MHD). There are three methods of digital
+        infrastructure (e.g., XDS, XCA, XDM, XDR, and <mark>MHD</mark>). There are three methods of digital
         signature defined here: Enveloping, Detached (manifest), and SubmissionSet.
     </p>
     <ul>
       <li class="bullet-list1">An Enveloping Signature is a Digital Signature Document that contains
         both the signature block and the content that is signed. Access to the contained content is
         through removing the Enveloping - Digital Signature.
-        Among other uses, this method should not be used with Document Sharing infrastructure.</li>
+        Among other uses, this method <mark>should not be used with Document Sharing infrastructure</mark>.</li>
       <li class="bullet-list1">A Detached Signature is a Digital Signature Document that contains a
         manifest that points at independently managed content. Detached signatures leave the signed
         document or documents in the original form. Among other
@@ -84,7 +84,7 @@
         uses the Document Sharing “SIGNS” relationship provides
         linkage.</li>
       <li class="bullet-list1">A SubmissionSet Signature is a Detached Signature Document that attests
-        to the content in a SubmissionSet by: containing a manifest of all the other Documents included
+        to the content in a <a href="https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.1.2">SubmissionSet</a> by: containing a manifest of all the other Documents included
         in the SubmissionSet, and a reference to the
         SubmissionSet. The Document Sharing “SIGNS” relationship may be used but is not required.</li>
     </ul>
@@ -159,7 +159,7 @@
       </thead>
       <tbody>
         <tr>
-          <td rowspan="6">Content Creator (Note 1)</td>
+          <td rowspan="5">Content Creator (Note 1)</td>
           <td>Detached Signature</td>
           <td>
             <mark><a href="../Volume1/ch-37.html#37.2.1">ITI TF-1: 37.2.1</a></mark>
@@ -190,7 +190,7 @@
           </td>
         </tr>
         <tr>
-          <td rowspan="6">Content Consumer (Note 1)</td>
+          <td rowspan="5">Content Consumer (Note 1)</td>
           <td>Detached Signature</td>
           <td>
             <mark><a href="../Volume1/ch-37.html#37.2.1">ITI TF-1: 37.2.1</a></mark>
@@ -236,8 +236,7 @@
     <p>
       The digital signature document, when published using Document Sharing profiles (e.g., XDS, XDR,
       XDM, XCA, etc.), shall conform to the Document Sharing metadata rules identified in
-      <a href="../Volume3/ch-5.5.html#5.5.6">ITI TF-3: 5.5.6</a>
-      .
+      <a href="../Volume3/ch-5.5.html#5.5.6">ITI TF-3: 5.5.6</a>.
     </p>
     <p>
       Content Consumers that support the Detached Signature Option shall have the capability to perform
@@ -251,7 +250,7 @@
       reference to all the documents included in the SubmissionSet, except for the Detached Signature
       document itself; and a reference to the
       SubmissionSet unique ID. This Detached Signature document is included in the SubmissionSet.</p>
-    <p>The SubmissionSet Signature Option requires the use of a Document Sharing Profile and leverages <mark><a href="https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html"></p>ebRIM</mark>.</p>
+    <p>The SubmissionSet Signature Option requires the use of a Document Sharing Profile and leverages <mark><a href="https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html">ebRIM</a></mark>.</p>
     <p>
       Content Consumers that support the SubmissionSet Signature Option shall have the capability to
       perform signature verification specified in
@@ -288,8 +287,7 @@
     <p>
       The digital signature document, when published using Document Sharing profiles (e.g., XDS, XDR,
       XDM, XCA, etc.), shall conform to the Document Sharing metadata rules identified in
-      <a href="../Volume3/ch-5.10.html#5.10.6">ITI TF-3: 5.10.6</a>
-      .
+      <a href="../Volume3/ch-5.10.html#5.10.6">ITI TF-3: 5.10.6</a>.
     </p>
     <p>
       Content Consumers that support the Detached Signature Option shall have the capability to perform
@@ -323,8 +321,7 @@
     <p>
       When Digital Signature documents are stored using a Document Sharing profile, such as XDS, the
       metadata rules are defined in
-      <a href="../Volume3/ch-5.5.html#5.5.6">ITI TF-3: 5.5.6</a>
-      .
+      <a href="../Volume3/ch-5.5.html#5.5.6">ITI TF-3: 5.5.6</a>.
     </p>
     <p>Content Creator and Content Consumer are grouped with CT Time Client as Digital Signatures
       require a reliable date and time.</p>
@@ -530,6 +527,8 @@
       modifications.</p>
     <p>Content Creator and Content Consumer should be grouped with ATNA Secure Node or Secure
       Application to record an Audit Message when a signature is created or validated.</p>
+    <h3 id="37.4.5">37.4.5 Sign using both XML and JSON options</h3>
+      <p>When the signer does not know which signature technology stack the validator is using, then the signer can choose to sign with both options.or the validator support both options</p>
     <h2 id="37.6">37.6 Cross Profile Considerations</h2>
     <p>When used with a Document Sharing infrastructure (e.g., XDS, XDR, XDM, or XCA):</p>
     <ul>
