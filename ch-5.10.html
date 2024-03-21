@@ -82,24 +82,14 @@
       <p>The following constraints define the <a href="https://datatracker.ietf.org/doc/html/rfc7515#section-3.2">JWS JSON</a> object. This block is common to the detached signature and Enveloping signature.</p>
       <ul>
         <li class="bullet-list1"><p><strong>SHALL</strong> use JSON Web Signature (JWS)(see <a href="https://tools.ietf.org/html/rfc7515">RFC 7515</a>). JSON Web Signature (JWS) is a means of representing content secured with digital signatures or Hash-based Message Authentication Codes (HMACs) using JSON data structures. Cryptographic algorithms and identifiers used with this specification are enumerated in the separate JSON Web Algorithms (JWA).</p>
-          <p class="bg-warning"><mark>Implementers that support XML must be aware that JSON Web Signatures can only be created and validated in the original native JSON. Transforms to and from XML will invalidate signatures.</mark></p>
         </li>
         <li class="bullet-list1">Shall conform to JAdES-B-LT – for support of Long Term signatures. The JAdES-B-LT specification adds the timestamp of the signing, inclusion of the signing certificate and statement of revocation.</li>
         </ul>
       <p>
-      </br></br>
-        <a name="_Toc237310005">
-          <span>Note that Content Creators and Content Consumers should be capable of being configured to other conformance policies to support local policy. For example, some environments may choose a different <mark>JAdES</mark> profile, hashing algorithm, policy identifier, or signature purpose vocabulary. Content Creators would thus create Digital Signature blocks that are not conformant to this profile. Content Consumers can validate these Digital Signature blocks, and be capable of configured behavior according to the local policy.</span>
-        </a>
-      </p>
-      <p><mark>Deviations from these guidelines would need to be expressed in site policy and would be enumerated in the JWS-Signature block. For example, some environments may choose a different hashing algorithm, policy identifier, or signature purpose vocabulary.</mark></p>
-
-
-      <p><mark>Some regions also require conformance to ISO 17090, which includes additional Certificate issuing, content, and validation rules.</mark></p>
-      <h4 id="5.10.2.1">5.10.2.1 JSON Signature Specification - Header</h3>
+      <h4 id="5.10.2.1">5.10.2.1 JSON Header</h3>
        <ul>
         <li class="bullet-list1">SHALL have "alg": "RS256" (preferred) or some other JSON Web Algorithms (JWA) (see <a href="https://www.rfc-editor.org/rfc/rfc7518.txt">RFC 7518</a>)</li>
-        <li class="bullet-list1">SHALL have "kty": "RS"</li>
+        <li class="bullet-list1">SHALL have <mark>"kty": "RS"</mark></li>
         <li class="bullet-list1">SHALL have "x5c" (X.509 certificate chain) equal to an array of one or more base64-encoded (not base64url-encoded) DER representations of the public certificate or certificate chain (see RFC 7517). The public key is listed in the first certificate in the "x5c" specified by the “Modulus” and “Exponent” parameters of the entry.</li>
         <li class="bullet-list1">The Signature SHALL include a "srCms signer commitments" element for the Purpose(s) of Signature. The Purpose can be the action being attested to, or the role associated with the signature. The value shall come from <a href = "http://hl7.org/fhir/ValueSet/signature-type">Signature type ValueSet</a> as defined in FHIR.</li>
         <li class="bullet-list1">
@@ -111,10 +101,10 @@
         </li>
         <li class="bullet-list1">The "sigT" parameter shall be present</li>
        </ul>
-      <h4 id="5.10.2.2">5.10.2.2 JSON Signature Specification - Payload</h3>
-        <ul><li class="bullet-list1">When FHIR Resources are signed, the signature is across the <a href="http://hl7.org/fhir/R4/json.html#canonical">Canonical JSON</a> form of the resource(s) https://www.rfc-editor.org/rfc/rfc8785</li></ul>
+      <h4 id="5.10.2.2">5.10.2.2 Payload</h3>
+        <ul><li class="bullet-list1">When FHIR Resources are signed, the signature is across the BASE64URL(JWS Payload) form of the Payload. The DSGj profile does not create any additional expectations of transformation on the Payload of any form.</li></ul>
 
-      <h4 id="5.10.2.3">5.10.2.3 JSON Signature Specification - Signature</h3>
+      <h4 id="5.10.2.3">5.10.2.3 Signature</h3>
         <ul> <li class="bullet-list1">The Signature <strong>SHOULD</strong> use the hashing algorithm SHA256. The signature validation policy will apply to the signature and determine the acceptability</li>
         </ul>
       <h3 id="5.10.3">5.10.3 JSON Detached Signature</h3>
