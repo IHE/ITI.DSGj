@@ -132,6 +132,11 @@
       <h3 id="5.10.3">5.10.3 JSON Detached Signature</h3>
       <h4 id="5.10.3.1">5.10.3.1 Protected Header</h3>
         <h5 id="5.10.3.1.1">5.10.3.1.1 "sigD" Header Parameter</h5>
+        <ul><li>sigD parameter shall be included as per 5.2.8.1 of the JADES Specification</li>
+            <li>mID member shall be present and set to "http://uri.etsi.org/19182/ObjectIdByURIHash"</li>
+            <li>ctys member shall be present</li>
+            <li>hashV, and the hashM members shall be present</li>
+        </ul>
         <h5 id="5.10.3.1.2">5.10.3.1.2 "cty" (content type) Header Parameter</h5>
           <ul><li>SHALL not be included</li></ul>
         <h5 id="5.10.3.1.2">5.10.3.1.2 "b64" Header Parameter</h5>
