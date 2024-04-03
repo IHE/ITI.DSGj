@@ -62,7 +62,7 @@
           </div>
           <div id="main-top" class="cell medium-10 large-10">
       <h2 id="5.10">5.10 Document Digital Signature in JSON (DSGj) Document Content</h2>
-      <p>Document Digital Signature content shall conform to JAdES schema for signatures, with extensions and restrictions defined in the following. IHE is not changing any optionality, prohibiting use of options, or mandating options. Issues such as long-term archival management of certificates are out of scope of this profile.</p>
+      <p>Document Digital Signature content shall conform to JAdES schema for signatures, with extensions and restrictions defined in the following. IHE is not changing any optionality, prohibiting use of options, or mandating options. Issues such as long-term archival management of certificates are out of scope of this profile. Shall there be a conflict in the requirements specified here versus as specified in JAdES, then the JADES specification shall be considered as authoritative.</p>
       <h3 id="5.10.1">5.10.1 References</h3>
       <h4 id="5.10.1.1">5.10.1.1 Normative References</h4>
       <p>
@@ -86,35 +86,73 @@
         <li class="bullet-list1">Shall conform to JAdES-B-LT – for support of Long Term signatures. The JAdES-B-LT specification adds the timestamp of the signing, inclusion of the signing certificate and statement of revocation.</li>
         </ul>
       <p>
-      <h4 id="5.10.2.1">5.10.2.1 JSON Header</h3>
-       <ul>
-        <li class="bullet-list1">SHALL have "alg": "RS256" (preferred) or some other JSON Web Algorithms (JWA) (see <a href="https://www.rfc-editor.org/rfc/rfc7518.txt">RFC 7518</a>)</li>
-        <li class="bullet-list1">SHALL have <mark>"kty": "RS"</mark></li>
-        <li class="bullet-list1">SHALL have "x5c" (X.509 certificate chain) equal to an array of one or more base64-encoded (not base64url-encoded) DER representations of the public certificate or certificate chain (see RFC 7517). The public key is listed in the first certificate in the "x5c" specified by the “Modulus” and “Exponent” parameters of the entry.</li>
-        <li class="bullet-list1">The Signature SHALL include a "srCms signer commitments" element for the Purpose(s) of Signature. The Purpose can be the action being attested to, or the role associated with the signature. The value shall come from <a href = "http://hl7.org/fhir/ValueSet/signature-type">Signature type ValueSet</a> as defined in FHIR.</li>
+      <h4 id="5.10.2.1">5.10.2.1 Protected Header</h3>
+        <h5 id ="5.10.2.1.1">"alg" (Algorithm) Header Parameter</h5>
+          <ul>
+            <li class="bullet-list1">SHALL have "alg" as "HS256" (must support), "RS256" (recommended) and more algorithm options can be supported as specified in JSON Web Algorithms (JWA) (see <a href="https://www.rfc-editor.org/rfc/rfc7518.html#section-3.1">RFC 7518</a>)</li>
+            <li><mark>Its value should be one of the algorithms for digital signatures recommended by in ETSI TS 119 312 [21].</mark></li>
+          </ul>
+        <h5 id="5.10.2.1.2">5.10.2.1.2 "crit" (Critical) Parameter</h5>
+          <ul>
+            <li>The header SHALL include the crit header parameter and conform to specifications as per JADES</li>
+          </ul>
+        <h5 id="5.10.2.1.3">5.10.2.1.3 "sigT" (claimed signing Time) Parameter</h5>
+          <ul>
+            <li>The header SHALL include the sigT header parameter and conform to specifications as per IHE Consistent Time (CT) profile</li>
+          </ul>
+         <h5 id="5.10.2.1.4">5.10.2.1.4 Service: signing a reference of the signing certificate</h5>
+          <ul>
+            <li>SHALL have at least one of the following header parameters in its JWS Protected Header: x5t#S256 (specified in clause 4.1.8 of IETF RFC 7515 [2]), x5c (specified in clause 4.1.6 of IETF RFC 7515 [2]), sigX5ts (specified in clause 5.2.2.3 of the JADES specification), or x5t#o (specified in clause 5.2.2 of the JADES Specification).</li>
+          </ul>
+        <h5 id="5.10.2.1.5">5.10.2.1.5 "srCms" (signer commitments) Header Parameter</h5>
+          <ul><li class="bullet-list1">The Signature SHALL include a "srCms signer commitments" element for the Purpose(s) of Signature. The Purpose can be the action being attested to, or the role associated with the signature. The value shall come from <a href = "http://hl7.org/fhir/ValueSet/signature-type">Signature type ValueSet</a> as defined in FHIR.</li></ul>
+        <h5 id="5.10.2.1.6">5.10.2.1.6 "sigPId" (signature Policy Identifier) Header Parameter</h5>
+        <ul>
         <li class="bullet-list1">
          <span>The policy may be identified in the sigPId header parameter as</span>
          <span style="font-weight:bold">urn:ihe:iti:dsg:detached:2014</span>
          <span>when the signature document is a Detached Signature and</span>
          <span style="font-weight:bold">urn:ihe:iti:dsg:enveloping:2014</span>
-         <span>when the signature document is an Enveloping Signature to indicate that the signature document complies with the DSG Profile.</span>
-        </li>
-        <li class="bullet-list1">The "sigT" parameter shall be present</li>
+         <span>when the signature document is an Enveloping Signature to indicate that the signature document complies with the DSG Profile.</span></li>
        </ul>
-      <h4 id="5.10.2.2">5.10.2.2 Payload</h3>
+      <h4 id = 5.10.2.2>5.10.2.2 Unprotected Header</h4>
+      <h5 id="5.10.2.2.1">5.10.2.2.1 "etsiU" Unprotected Header Parameter</h5>
+        <ul>
+        <li class="bullet-list1">The etsiU parameter shall be present in the unprotected header as per the JADES specification</li>
+       </ul>
+       <h5 id="5.10.2.2.2">5.10.2.2.2 "sigTst" JSON object</h5>
+       <ul>
+       <li class="bullet-list1">The sigTst parameter shall be present in the unprotected header as per the JADES specification</li>
+      </ul>
+      <h4 id="5.10.2.3">5.10.2.3 Payload</h3>
         <ul><li class="bullet-list1">When FHIR Resources are signed, the signature is across the BASE64URL(JWS Payload) form of the Payload. The DSGj profile does not create any additional expectations of transformation on the Payload of any form.</li></ul>
-
-      <h4 id="5.10.2.3">5.10.2.3 Signature</h3>
-        <ul> <li class="bullet-list1">The Signature <strong>SHOULD</strong> use the hashing algorithm SHA256. The signature validation policy will apply to the signature and determine the acceptability</li>
+      <h4 id="5.10.2.4">5.10.2.4 Signature</h3>
+        <ul><li class="bullet-list1">The Signature <strong>SHOULD</strong> use the hashing algorithm SHA256. The signature validation policy will apply to the signature and determine the acceptability</li>
         </ul>
       <h3 id="5.10.3">5.10.3 JSON Detached Signature</h3>
-      <p>The Detached Signature is accomplished by deleting the "payload" member of the JWS JSON Object. This set of Reference elements is considered the manifest.</p>
+      <h4 id="5.10.3.1">5.10.3.1 Protected Header</h3>
+        <h5 id="5.10.3.1.1">5.10.3.1.1 "sigD" Header Parameter</h5>
+        <h5 id="5.10.3.1.2">5.10.3.1.2 "cty" (content type) Header Parameter</h5>
+          <ul><li>SHALL not be included</li></ul>
+        <h5 id="5.10.3.1.2">5.10.3.1.2 "b64" Header Parameter</h5>
+        <h4 id="5.10.3.2">5.10.3.2 Unprotected Header</h3>
+      <h4 id="5.10.3.3">5.10.3.3 Payload</h3>
+        <ul><li>The Detached Signature is accomplished by deleting the "payload" member of the JWS JSON Object.</li></ul>
+      <h4 id="5.10.3.4">5.10.3.4 Signature</h3>
+
       <ul>
         <li class="bullet-list1">
             The sigD header parameter shall be present as per section 5.2.8 of JAdES specification. the mID member shall shall be used and hold the document uniqueID. For documents that do not use a URI as the uniqueId, the Affinity Domain should determine an appropriate way to encode the DocumentEntry.uniqueId
         </li> 
       </ul>  
-      <h3 id="5.10.4">5.10.4 JSON Enveloping Signature</h3>    
+      <h3 id="5.10.4">5.10.4 JSON Enveloping Signature</h3> 
+      <h4 id="5.10.4.1">5.10.4.1 Protected Header</h3>
+        <h5 id="5.10.4.1.1">5.10.4.1.1 "cty" (content type) Header Parameter</h5>
+        <ul><li>SHALL be included as per syntax specified in IETF RFC 7515, clause 4.1.10.</li></ul>
+      <h4 id="5.10.4.2">5.10.4.2 Unprotected Header</h3>
+      <h4 id="5.10.4.3">5.10.4.3 Payload</h3>
+      <h4 id="5.10.4.4">5.10.4.4 Signature</h3>
+       
       <h3 id="5.10.5">5.10.5 JSON Signature Verification</h3>
       <p>There are three levels of signature verification:</p>
       <ol>
