@@ -12,6 +12,11 @@ DSG with JSON signature
 
 Discussion on [zulip chat stream: IHE DSG using JSON signature](https://chat.fhir.org/#narrow/stream/179223-ihe/topic/IHE-DSG.20using.20JSON.20Signature)
 
+## Working TCON
+
+Weekly on Wednesday until May 10, 2024, at 7am Central, 
+[IHE ITI Teams meeting](https://teams.microsoft.com/l/meetup-join/19%3ameeting_MDk4ZDc2MjEtZGZjNy00MzY4LTg2NTgtOTc0ZWQ4YTg5Mjlm%40thread.v2/0?context=%7b%22Tid%22%3a%2202a9376b-a4f9-4a63-a240-52c43ebf9a89%22%2c%22Oid%22%3a%226459fea4-110a-4d17-85f0-00587211a0c0%22%7d)
+
 ## Open Issues
 
 #### 1. Notes about deviation from profile are not being stated in the DSGj profile.
