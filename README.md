@@ -37,3 +37,5 @@ It is presumed that the deviations from profile will yield implementations non c
  <span>The JADES specification is proposing that the signature is applied across a bytestream and makes no assumptions about the canonicalization applied and that canonicalization recommendations are made consistent by PCC dev1</span>
 
 #### 3. Table 5.5.2-1: Digital Signature Purposes from ASTM E1762-95(2013) to be replaced by FHIR Signature Type Value Set
+
+#### 4. Rename the volume 3 to include XML-Signature
