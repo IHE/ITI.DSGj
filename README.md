@@ -6,7 +6,7 @@ DSG with JSON signature
 
 - Volume 1 changes to [1:37 Document Digital Signature (DSG)](ch-37.html)
 - Volume 3 add [3:5.10 Document Digital Signature (DSG) JSON Signature Document Content](ch-5.10.html)
-- May update the xml-signature, but those likely will go into CPs to track
+- May update the xml-signature, but those likely will go into CPs to track, see below for the [issues identified in XML DSG chapter 5.5](#issues-identified-in-xml-dsg-chapter-55)
 
 ## Zulip Chat
 
