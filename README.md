@@ -1,5 +1,7 @@
 # ITI.DSGj
 
+The html pages can be viewed as [published by github pages here](https://ihe.github.io/ITI.DSGj/). Note that this does not include the CSS that will be used for formal publication in the Technical framework.
+
 DSG with JSON signature
 
 - Volume 1 changes to [1:37 Document Digital Signature (DSG)](ch-37.html)
@@ -8,7 +10,7 @@ DSG with JSON signature
 
 ## Zulip Chat
 
-Discussion on zulip chat stream - https://chat.fhir.org/#narrow/stream/179223-ihe/topic/IHE-DSG.20using.20JSON.20Signature
+Discussion on [zulip chat stream: IHE DSG using JSON signature](https://chat.fhir.org/#narrow/stream/179223-ihe/topic/IHE-DSG.20using.20JSON.20Signature)
 
 ## Open Issues
 
