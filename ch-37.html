@@ -68,14 +68,14 @@
       The Document Digital Signature (DSG) Profile defines general purpose methods
         of digitally signing of documents for communication and persistence. Among other uses, these
         methods can be used within an IHE Document Sharing
-        infrastructure (e.g., XDS, XCA, XDM, XDR, and <mark>MHD</mark>). There are three methods of digital
+        infrastructure (e.g., XDS, XCA, XDM, XDR, and MHD). There are three methods of digital
         signature defined here: Enveloping, Detached (manifest), and SubmissionSet.
     </p>
     <ul>
       <li class="bullet-list1">An Enveloping Signature is a Digital Signature Document that contains
-        both the signature block and the content that is signed. Access to the contained content is
+        both the signature and the content that is signed. Access to the contained content is
         through removing the Enveloping - Digital Signature.
-        Among other uses, this method <mark>should not be used with Document Sharing infrastructure</mark>.</li>
+        Among other uses, this method should not be used with Document Sharing infrastructure.</li>
       <li class="bullet-list1">A Detached Signature is a Digital Signature Document that contains a
         manifest that points at independently managed content. Detached signatures leave the signed
         document or documents in the original form. Among other
@@ -126,6 +126,7 @@
           <td>R</td>
           <td>
             <a href="../Volume3/ch-5.5.html#5.5">ITI TF-3: 5.5</a>
+            <a href="../Volume3/ch-5.10.html#5.10">ITI TF-3: 5.10</a>
           </td>
         </tr>
         <tr>
@@ -134,6 +135,7 @@
           <td>R</td>
           <td>
             <a href="../Volume3/ch-5.5.html#5.5">ITI TF-3: 5.5</a>
+            <a href="../Volume3/ch-5.10.html#5.10">ITI TF-3: 5.10</a>
           </td>
         </tr>
       </tbody>
@@ -162,69 +164,69 @@
           <td rowspan="5">Content Creator (Note 1)</td>
           <td>Detached Signature</td>
           <td>
-            <mark><a href="../Volume1/ch-37.html#37.2.1">ITI TF-1: 37.2.1</a></mark>
-          </td>
-        </tr>
-        <tr>
-          <td>JSON Detached Signature</td>
-          <td>
-            <mark><a href="../Volume1/ch-37.html#37.2.3">ITI TF-1: 37.2.3</a></mark>
+            <a href="../Volume1/ch-37.html#37.2.1">ITI TF-1: 37.2.1</a>
           </td>
         </tr>
         <tr>
           <td>SubmissionSet Signature</td>
           <td>
-            <mark><a href="../Volume1/ch-37.html#37.2.1.1">ITI TF-1: 37.2.1.1</a></mark>
+            <a href="../Volume1/ch-37.html#37.2.1.1">ITI TF-1: 37.2.1.1</a>
           </td>
         </tr>
         <tr>
           <td>Enveloping Signature</td>
           <td>
-            <mark><a href="../Volume1/ch-37.html#37.2.2">ITI TF-1: 37.2.2</a></mark>
+            <a href="../Volume1/ch-37.html#37.2.2">ITI TF-1: 37.2.2</a>
+          </td>
+        </tr>
+        <tr>
+          <td>JSON Detached Signature</td>
+          <td>
+            <a href="../Volume1/ch-37.html#37.2.3">ITI TF-1: 37.2.3</a>
           </td>
         </tr>
         <tr>
           <td>JSON Enveloping Signature</td>
           <td>
-            <mark><a href="../Volume1/ch-37.html#37.2.4">ITI TF-1: 37.2.4</a></mark>
+            <a href="../Volume1/ch-37.html#37.2.4">ITI TF-1: 37.2.4</a>
           </td>
         </tr>
         <tr>
           <td rowspan="5">Content Consumer (Note 1)</td>
           <td>Detached Signature</td>
           <td>
-            <mark><a href="../Volume1/ch-37.html#37.2.1">ITI TF-1: 37.2.1</a></mark>
-          </td>
-        </tr>
-        <tr>
-          <td>JSON Detached Signature</td>
-          <td>
-            <mark><a href="../Volume1/ch-37.html#37.2.3">ITI TF-1: 37.2.3</a></mark>
+            <a href="../Volume1/ch-37.html#37.2.1">ITI TF-1: 37.2.1</a>
           </td>
         </tr>
         <tr>
           <td>SubmissionSet Signature</td>
           <td>
-            <mark><a href="../Volume1/ch-37.html#37.2.1.1">ITI TF-1: 37.2.1.1</a></mark>
+            <a href="../Volume1/ch-37.html#37.2.1.1">ITI TF-1: 37.2.1.1</a>
           </td>
         </tr>
         <tr>
           <td>Enveloping Signature</td>
           <td>
-            <mark><a href="../Volume1/ch-37.html#37.2.2">ITI TF-1: 37.2.2</a></mark>
+            <a href="../Volume1/ch-37.html#37.2.2">ITI TF-1: 37.2.2</a>
+          </td>
+        </tr>
+        <tr>
+          <td>JSON Detached Signature</td>
+          <td>
+            <a href="../Volume1/ch-37.html#37.2.3">ITI TF-1: 37.2.3</a>
           </td>
         </tr>
         <tr>
           <td>JSON Enveloping Signature</td>
           <td>
-            <mark><a href="../Volume1/ch-37.html#37.2.4">ITI TF-1: 37.2.4</a></mark>
+            <a href="../Volume1/ch-37.html#37.2.4">ITI TF-1: 37.2.4</a>
           </td>
         </tr>
       </tbody>
     </table>
     <p class="note">Note 1: Content Creator Actors and Content Consumer Actors shall support at least
       one option.</p>
-    <h3 id="37.2.1">37.2.1 XML Detached Signature Option</h3>
+    <h3 id="37.2.1">37.2.1 Detached Signature Option</h3>
     <p>
       Content Creators that support the Detached Signature Option shall have the capability to create a
       Detached Signature document that is composed of the Signature block as specified in
@@ -234,8 +236,7 @@
       document.
     </p>
     <p>
-      The digital signature document, when published using Document Sharing profiles (e.g., XDS, XDR,
-      XDM, XCA, etc.), shall conform to the Document Sharing metadata rules identified in
+      The digital signature document, when published using Document Sharing profiles (e.g., XDS, XCA, XDM, XDR, and MHD), shall conform to the Document Sharing metadata rules identified in
       <a href="../Volume3/ch-5.5.html#5.5.6">ITI TF-3: 5.5.6</a>.
     </p>
     <p>
@@ -244,20 +245,20 @@
       <a href="../Volume3/ch-5.5.html#5.5.5">ITI TF-3: 5.5.5</a>
       for documents signed with a Detached Signature.
     </p>
-    <h4 id="37.2.1.1">37.2.1.1 XML SubmissionSet Signature Option</h4>
+    <h4 id="37.2.1.1">37.2.1.1 SubmissionSet Signature Option</h4>
     <p>The SubmissionSet Signature Option is a variant on the Detached Signature Option.</p>
     <p>The Content Creator shall have the ability to create a Detached Signature document that includes
       reference to all the documents included in the SubmissionSet, except for the Detached Signature
       document itself; and a reference to the
       SubmissionSet unique ID. This Detached Signature document is included in the SubmissionSet.</p>
-    <p>The SubmissionSet Signature Option requires the use of a Document Sharing Profile and leverages <mark><a href="https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html">ebRIM</a></mark>.</p>
+    <p>The SubmissionSet Signature Option requires the use of a Document Sharing Profile and leverages <a href="https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html">ebRIM</a>.</p>
     <p>
       Content Consumers that support the SubmissionSet Signature Option shall have the capability to
       perform signature verification specified in
       <a href="../Volume3/ch-5.5.html#5.5.5">ITI TF-3: 5.5.5</a>
       for all the documents contained within the Detached Signature.
     </p>
-    <h3 id="37.2.2">37.2.2 XML Enveloping Signature Option</h3>
+    <h3 id="37.2.2">37.2.2 Enveloping Signature Option</h3>
     <p>
       Content Creators that support the Enveloping Signature Option shall have the capability to create
       an Enveloping Signature document that is composed of the signature block as specified in
@@ -277,8 +278,8 @@
     <h3 id="37.2.3">37.2.3 JSON Detached Signature Option</h3>
     <p>
       Content Creators that support the Detached Signature Option shall have the capability to create a
-      Detached Signature document that is composed of the <mark>Signature block</mark> as specified in
-      <a href="../Volume3/ch-5.10.html#5.5.2">ITI TF-3: 5.10.2</a>
+      Detached Signature document that is composed of the JWS JSON object as specified in
+      <a href="../Volume3/ch-5.10.html#5.10.2">ITI TF-3: 5.10.2</a>
       and <a href="../Volume3/ch-5.10.html#5.10.3"> ITI TF-3: 5.10.3</a>, and a manifest of references to the signed documents. The signature document does not
       include the content of the documents that are signed. The Detached Signature Option supports the
       signing of multiple documents with one signature
@@ -298,7 +299,7 @@
     <h3 id="37.2.4">37.2.4 JSON Enveloping Signature Option</h3>
     <p>
       Content Creators that support the Enveloping Signature Option shall have the capability to create
-      an Enveloping Signature document that is composed of the signature block as specified in
+      an Enveloping Signature document that is composed of the JWS JSON object as specified in
       <a href="../Volume3/ch-5.10.html#5.10.2">ITI TF-3: 5.10.2</a>
       and <a href="../Volume3/ch-5.10.html#5.10.4">5.10.4</a>, and the document that is signed. The Enveloping Signature Option only supports one document per signature document.
     </p>
@@ -321,7 +322,7 @@
     <p>
       When Digital Signature documents are stored using a Document Sharing profile, such as XDS, the
       metadata rules are defined in
-      <a href="../Volume3/ch-5.5.html#5.5.6">ITI TF-3: 5.5.6</a>.
+      <a href="../Volume3/ch-5.5.html#5.5.6">ITI TF-3: 5.5.6</a> for XML and in <a href="../Volume3/ch-5.10.html#5.10.6">ITI TF-3: 5.10.6</a> for JSON.
     </p>
     <p>Content Creator and Content Consumer are grouped with CT Time Client as Digital Signatures
       require a reliable date and time.</p>
@@ -457,10 +458,9 @@
       signed is also defined by a Document Sharing SubmissionSet.</p>
     <h3 id="37.4.3">37.4.3 Processing by Document Consumer</h3>
     <p>Among other uses, the Detached Signature Option supports use of Document Sharing infrastructure
-      (e.g., XDS, XDR, XDM, and XCA). The following sections describe how common queries can be
+      (e.g., XDS, XCA, XDM, XDR, and MHD). The following sections describe how common queries can be
       performed in a Document Sharing environment where
-      document digital signatures are used.</p>
-    <p><mark>Link to HIE whitepaper</mark></p>
+      document digital signatures are used. Additional details about the Document Sharing infrastructure are defined in the <a href="https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html">HIE Whitepaper</a></p>
     <ul>
       <li class="bullet-list1">
         Search for signatures, given a document
@@ -530,7 +530,7 @@
     <h3 id="37.4.5">37.4.5 Sign using both XML and JSON options</h3>
       <p>When the signer does not know which signature technology stack the validator is using, then the signer can choose to sign with both options.or the validator support both options</p>
     <h2 id="37.6">37.6 Cross Profile Considerations</h2>
-    <p>When used with a Document Sharing infrastructure (e.g., XDS, XDR, XDM, or XCA):</p>
+    <p>When used with a Document Sharing infrastructure (e.g., XDS, XCA, XDM, XDR, and MHD):</p>
     <ul>
       <li class="bullet-list1">
         <a href="../Volume3/ch-5.5.html#5.5.6">ITI TF-3: 5.5.6</a>
