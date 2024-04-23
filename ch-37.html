@@ -121,22 +121,34 @@
       </thead>
       <tbody>
         <tr>
-          <td>Content Creator</td>
+          <td rowspan="2">Content Creator</td>
           <td>Document Digital Signature</td>
-          <td>R</td>
+          <td>O</td>
           <td>
             <a href="../Volume3/ch-5.5.html#5.5">ITI TF-3: 5.5</a>
+          </td>
+          <tr>
+          <td>Document Digital Signature in JSON</td>
+          <td>O</td>
+          <td>
+            <a href="../Volume3/ch-5.10.html#5.10">ITI TF-3: 5.10</a>
+          </td>
+        </tr>     
+        </tr>
+        <tr>
+          <td rowspan="2">Content Consumer</td>
+          <td>Document Digital Signature</td>
+          <td>O</td>
+          <td>
+            <a href="../Volume3/ch-5.5.html#5.5">ITI TF-3: 5.5</a>
+          </td>
+          <tr>
+          <td>Document Digital Signature in JSON</td>
+          <td>O</td>
+          <td>
             <a href="../Volume3/ch-5.10.html#5.10">ITI TF-3: 5.10</a>
           </td>
         </tr>
-        <tr>
-          <td>Content Consumer</td>
-          <td>Document Digital Signature</td>
-          <td>R</td>
-          <td>
-            <a href="../Volume3/ch-5.5.html#5.5">ITI TF-3: 5.5</a>
-            <a href="../Volume3/ch-5.10.html#5.10">ITI TF-3: 5.10</a>
-          </td>
         </tr>
       </tbody>
     </table>
@@ -229,7 +241,7 @@
     <h3 id="37.2.1">37.2.1 Detached Signature Option</h3>
     <p>
       Content Creators that support the Detached Signature Option shall have the capability to create a
-      Detached Signature document that is composed of the Signature block as specified in
+      Detached Signature document that is composed of the XML Signature block as specified in
       <a href="../Volume3/ch-5.5.html#5.5.2">ITI TF-3: 5.5.2</a>
       and <a href="../Volume3/ch-5.5.html#5.5.3">ITI TF-3: 5.5.3</a>, and a manifest of references to the signed documents. The signature document does not include the content of the documents that are signed. The Detached Signature Option supports the
       signing of multiple documents with one signature
@@ -246,7 +258,7 @@
       for documents signed with a Detached Signature.
     </p>
     <h4 id="37.2.1.1">37.2.1.1 SubmissionSet Signature Option</h4>
-    <p>The SubmissionSet Signature Option is a variant on the Detached Signature Option.</p>
+    <p>The SubmissionSet Signature Option is a variant on the Detached Signature Option using the XML Digital Signature.</p>
     <p>The Content Creator shall have the ability to create a Detached Signature document that includes
       reference to all the documents included in the SubmissionSet, except for the Detached Signature
       document itself; and a reference to the
@@ -261,7 +273,7 @@
     <h3 id="37.2.2">37.2.2 Enveloping Signature Option</h3>
     <p>
       Content Creators that support the Enveloping Signature Option shall have the capability to create
-      an Enveloping Signature document that is composed of the signature block as specified in
+      an Enveloping Signature document that is composed of the XML signature block as specified in
       <a href="../Volume3/ch-5.5.html#5.5.2">ITI TF-3: 5.5.2</a>
       and <a href="../Volume3/ch-5.5.html#5.5.4">5.5.4</a>, and the document that is signed. The Enveloping Signature Option only supports one document per signature document.
     </p>
@@ -286,8 +298,7 @@
       document.
     </p>
     <p>
-      The digital signature document, when published using Document Sharing profiles (e.g., XDS, XDR,
-      XDM, XCA, etc.), shall conform to the Document Sharing metadata rules identified in
+      The digital signature document, when published using Document Sharing profiles (e.g., XDS, XCA, XDM, XDR, and MHD), shall conform to the Document Sharing metadata rules identified in
       <a href="../Volume3/ch-5.10.html#5.10.6">ITI TF-3: 5.10.6</a>.
     </p>
     <p>

@@ -156,8 +156,8 @@
           <li>sigD parameter shall be included as per 5.2.8.1 of the JAdES Specification</li>
             <li>mID member shall be present and set to "http://uri.etsi.org/19182/ObjectIdByURIHash"</li>
             
-              <li class="bullet-list1"><mark>
-                pars member shall shall be used and hold the document uniqueID. For documents that do not use a URI as the uniqueId, the Affinity Domain should determine an appropriate way to encode the DocumentEntry.uniqueId</mark>
+              <li class="bullet-list1">
+                The pars member shall be an array of strings that contain references to each data object being signed. This array is considered the manifest. Each string in this array shall be an URI and shall hold the document uniqueID. For documents that do not use a URI as the uniqueId, the Affinity Domain should determine an appropriate way to encode the DocumentEntry.uniqueId
              </li>
             <li>ctys member shall be present</li>
             <li>hashV, and the hashM members shall be present</li>
