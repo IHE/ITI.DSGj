@@ -28,7 +28,7 @@
           </div>
           <div class="top-bar-right hide-for-small-only">
             <ul class="menu">
-              <li class="menu-text tf-version">IHE IT Infrastructure (ITI) Technical Framework, Volume <span id="volumeNo"></span><br /><mark>Revision 20.0, August 4, 2023 – Final Text</mark></li>
+              <li class="menu-text tf-version">IHE IT Infrastructure (ITI) Technical Framework, Volume <span id="volumeNo"></span><br />Revision 21.0, April 24, 2024 – Final Text</li>
             </ul>
               <ul class="menu align-right">
                     <li><input id="ihe-search-field" type="search" placeholder="Search"></li>
@@ -524,6 +524,10 @@
     <p>Since it is unclear whether (or which) metadata should refer to the signed document or to the
       enveloping signature document, IHE does not specify metadata to be used for an Enveloping
       Signature document in a Document Sharing infrastructure.</p>
+    
+    <h3 id="37.4.5">37.4.5 Sign using both XML and JSON options</h3>
+      <p>When the signer does not know which signature technology stack the validator is using, then the signer can choose to sign with both options.or the validator support both options</p>
+
     <h2 id="37.5">37.5 Security Considerations</h2>
     <p>Digital Signatures rely on a Private Key / Public Key Management Infrastructure (aka PKI) that
       must exist and be configured. The definition and configuration of PKI is outside the scope of
@@ -538,8 +542,6 @@
       modifications.</p>
     <p>Content Creator and Content Consumer should be grouped with ATNA Secure Node or Secure
       Application to record an Audit Message when a signature is created or validated.</p>
-    <h3 id="37.4.5">37.4.5 Sign using both XML and JSON options</h3>
-      <p>When the signer does not know which signature technology stack the validator is using, then the signer can choose to sign with both options.or the validator support both options</p>
     <h2 id="37.6">37.6 Cross Profile Considerations</h2>
     <p>When used with a Document Sharing infrastructure (e.g., XDS, XCA, XDM, XDR, and MHD):</p>
     <ul>

@@ -29,6 +29,8 @@ It is presumed that the deviations from profile will yield implementations non c
 
 #### 2. Usage of DSG with MHD (ITI-105) is not be covered as its not in the scope of DSG, as FHIR Bundle signatures are not directly supported, but it would be supported as a two step process where a serialized blob that could be signed.
 
+#### 3. DSGj does not contain guidance around homeCommunityID, as the uniqueId is globally unique and knowing the homeCommunityID is a nice-to-have 
+
 ## Issues Identified in XML DSG chapter 5.5
 
 #### 1. Notes about deviation from profile to be reviewed if they need to be present
