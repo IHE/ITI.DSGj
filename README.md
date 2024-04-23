@@ -27,7 +27,7 @@ It is presumed that the deviations from profile will yield implementations non c
    "Note that Content Creators and Content Consumers should be capable of being configured to other conformance policies to support local policy. For example, some environments may choose a different <mark>JAdES</mark> profile, hashing algorithm, policy identifier, or signature purpose vocabulary. Content Creators would thus create Digital Signature blocks that are not conformant to this profile. Content Consumers can validate these Digital Signature blocks, and be capable of configured behavior according to the local policy. Deviations from these guidelines would need to be expressed in site policy and would be enumerated in the JWS-Signature block. For example, some environments may choose a different hashing algorithm, policy identifier, or signature purpose vocabulary. Some regions also require conformance to ISO 17090, which includes additional Certificate issuing, content, and validation rules."
    </i></span>
 
-#### 2. Usage of DSG with MHDS would not be covered as DSG does not address signature for a FHIR Bundle
+#### 2. Usage of DSG with MHD (ref transaction no) would not be covered as DSG does not address signature for a FHIR Bundle, is not directly supported, but a result of that ends up as a serialized blob that can be signed -> volume 1
 
 ## Issues Identified in XML DSG chapter 5.5
 
