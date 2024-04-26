@@ -27,7 +27,7 @@ It is presumed that the deviations from profile will yield implementations non c
    "Note that Content Creators and Content Consumers should be capable of being configured to other conformance policies to support local policy. For example, some environments may choose a different JAdES profile, hashing algorithm, policy identifier, or signature purpose vocabulary. Content Creators would thus create Digital Signature blocks that are not conformant to this profile. Content Consumers can validate these Digital Signature blocks, and be capable of configured behavior according to the local policy. Deviations from these guidelines would need to be expressed in site policy and would be enumerated in the JWS-Signature block. For example, some environments may choose a different hashing algorithm, policy identifier, or signature purpose vocabulary. Some regions also require conformance to ISO 17090, which includes additional Certificate issuing, content, and validation rules."
    </i></span>
 
-#### 2. Usage of DSG with MHD (ITI-105) is not be covered as its not in the scope of DSG, as FHIR Bundle signatures are not directly supported, but it would be supported as a two step process where a serialized blob that could be signed.
+#### 2. Usage of DSG with MHD (ITI-105) is not covered as it is not in the scope of DSG. FHIR bundle signatures are not directly supported, but it would be supported as a two step process with a serialized blob that could be signed.
 
 #### 3. DSGj does not contain guidance around homeCommunityID, as the uniqueId is globally unique and knowing the homeCommunityID is a nice-to-have 
 
@@ -41,3 +41,5 @@ It is presumed that the deviations from profile will yield implementations non c
 #### 3. Table 5.5.2-1: Digital Signature Purposes from ASTM E1762-95(2013) to be replaced by FHIR Signature Type Value Set
 
 #### 4. Rename the volume 3 to include XML-Signature
+
+#### 5. There is no guidance on encryption algorithms in the chapter at the moment. Review 5.10.2.1.1. "Alg" parameter guidance around "RS256", "ES256" to see if XML needs similar updates
