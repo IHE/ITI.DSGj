@@ -28,7 +28,7 @@
           </div>
           <div class="top-bar-right hide-for-small-only">
             <ul class="menu">
-              <li class="menu-text tf-version">IHE IT Infrastructure (ITI) Technical Framework, Volume <span id="volumeNo"></span><br /><mark>Revision 20.0, August 4, 2023 – Final Text</mark></li>
+              <li class="menu-text tf-version">IHE IT Infrastructure (ITI) Technical Framework, Volume <span id="volumeNo"></span><br />Revision 20.0, August 4, 2023 – Final Text</li>
             </ul>
               <ul class="menu align-right">
                     <li><input id="ihe-search-field" type="search" placeholder="Search"></li>
@@ -121,22 +121,34 @@
       </thead>
       <tbody>
         <tr>
-          <td>Content Creator</td>
+          <td rowspan="2">Content Creator</td>
           <td>Document Digital Signature</td>
-          <td>R</td>
+          <td>O</td>
           <td>
             <a href="../Volume3/ch-5.5.html#5.5">ITI TF-3: 5.5</a>
+          </td>
+          <tr>
+          <td>Document Digital Signature in JSON</td>
+          <td>O</td>
+          <td>
+            <a href="../Volume3/ch-5.10.html#5.10">ITI TF-3: 5.10</a>
+          </td>
+        </tr>     
+        </tr>
+        <tr>
+          <td rowspan="2">Content Consumer</td>
+          <td>Document Digital Signature</td>
+          <td>O</td>
+          <td>
+            <a href="../Volume3/ch-5.5.html#5.5">ITI TF-3: 5.5</a>
+          </td>
+          <tr>
+          <td>Document Digital Signature in JSON</td>
+          <td>O</td>
+          <td>
             <a href="../Volume3/ch-5.10.html#5.10">ITI TF-3: 5.10</a>
           </td>
         </tr>
-        <tr>
-          <td>Content Consumer</td>
-          <td>Document Digital Signature</td>
-          <td>R</td>
-          <td>
-            <a href="../Volume3/ch-5.5.html#5.5">ITI TF-3: 5.5</a>
-            <a href="../Volume3/ch-5.10.html#5.10">ITI TF-3: 5.10</a>
-          </td>
         </tr>
       </tbody>
     </table>
@@ -224,12 +236,12 @@
         </tr>
       </tbody>
     </table>
-    <p class="note">Note 1: Content Creator Actors and Content Consumer Actors shall support at least
+    <p class="note">Note 1: Content Creator Actors and Content Consumer Actors SHALL support at least
       one option.</p>
     <h3 id="37.2.1">37.2.1 Detached Signature Option</h3>
     <p>
       Content Creators that support the Detached Signature Option shall have the capability to create a
-      Detached Signature document that is composed of the Signature block as specified in
+      Detached Signature document that is composed of the XML Signature block as specified in
       <a href="../Volume3/ch-5.5.html#5.5.2">ITI TF-3: 5.5.2</a>
       and <a href="../Volume3/ch-5.5.html#5.5.3">ITI TF-3: 5.5.3</a>, and a manifest of references to the signed documents. The signature document does not include the content of the documents that are signed. The Detached Signature Option supports the
       signing of multiple documents with one signature
@@ -246,7 +258,7 @@
       for documents signed with a Detached Signature.
     </p>
     <h4 id="37.2.1.1">37.2.1.1 SubmissionSet Signature Option</h4>
-    <p>The SubmissionSet Signature Option is a variant on the Detached Signature Option.</p>
+    <p>The SubmissionSet Signature Option is a variant on the Detached Signature Option using the XML Digital Signature.</p>
     <p>The Content Creator shall have the ability to create a Detached Signature document that includes
       reference to all the documents included in the SubmissionSet, except for the Detached Signature
       document itself; and a reference to the
@@ -261,7 +273,7 @@
     <h3 id="37.2.2">37.2.2 Enveloping Signature Option</h3>
     <p>
       Content Creators that support the Enveloping Signature Option shall have the capability to create
-      an Enveloping Signature document that is composed of the signature block as specified in
+      an Enveloping Signature document that is composed of the XML signature block as specified in
       <a href="../Volume3/ch-5.5.html#5.5.2">ITI TF-3: 5.5.2</a>
       and <a href="../Volume3/ch-5.5.html#5.5.4">5.5.4</a>, and the document that is signed. The Enveloping Signature Option only supports one document per signature document.
     </p>
@@ -286,8 +298,7 @@
       document.
     </p>
     <p>
-      The digital signature document, when published using Document Sharing profiles (e.g., XDS, XDR,
-      XDM, XCA, etc.), shall conform to the Document Sharing metadata rules identified in
+      The digital signature document, when published using Document Sharing profiles (e.g., XDS, XCA, XDM, XDR, and MHD), shall conform to the Document Sharing metadata rules identified in
       <a href="../Volume3/ch-5.10.html#5.10.6">ITI TF-3: 5.10.6</a>.
     </p>
     <p>
@@ -416,7 +427,9 @@
       content integrity, authenticity, and authentication of the
       identity of the signer. The identity of the signer is assured through use of Private Key and
       Public Key management. Management of Private Key and Public Keys are not addressed by this
-      profile.</p>
+      profile. 
+      <ins>The date/time of when the signature happened is critical to proving the sequence of the data over time. 
+      For a discussion on Private Key and Public Key management (PKI), and assurance of time, see the <a href="ch-37.html#37.5">Security Considerations</a> section.</ins></p>
     <h3 id="37.4.1">37.4.1 Verify Document Integrity</h3>
     <p>One purpose of use of a Digital Signature is to verify that the document being used is the same
       as the document that was signed and has not been modified by error or intent. This is called
@@ -513,10 +526,16 @@
     <p>Since it is unclear whether (or which) metadata should refer to the signed document or to the
       enveloping signature document, IHE does not specify metadata to be used for an Enveloping
       Signature document in a Document Sharing infrastructure.</p>
+    
+    <h3 id="37.4.5">37.4.5 Sign using both XML and JSON options</h3>
+      <p>When the signer does not know which signature technology stack the validator is using, then the signer can choose to sign with both options; or the validator support both options</p>
+
     <h2 id="37.5">37.5 Security Considerations</h2>
     <p>Digital Signatures rely on a Private Key / Public Key Management Infrastructure (aka PKI) that
       must exist and be configured. The definition and configuration of PKI is outside the scope of
-      this document content profile. The PKI should adhere
+      this document content profile. 
+      <ins>PKI binds public keys with the respective identities of entities (like people and organizations). This binding is established through a process of registration and issuance of certificates at and by a certificate authority (CA). </ins>
+      The PKI should adhere
       to ISO TS-17090 standards for PKI in healthcare.</p>
     <p>The Detached Signature Option allows for independent management of signature document and
       content documents; thus, there is a risk they will be made unavailable through revision or access
@@ -525,10 +544,9 @@
       require a reliable date and time. There is a risk that the clock can be subverted, so operational
       controls should be used to audit clock
       modifications.</p>
+    <ins><p>Content Creator implementing the JSON Detached Signature or the JSON Enveloping Signature Options shall have access to a Time Stamping Authority (TSA) Service that meets the JSON Signature <code>tstVD</code> requirement and local policy requirements for Time Stamping Authority.</p></ins>
     <p>Content Creator and Content Consumer should be grouped with ATNA Secure Node or Secure
       Application to record an Audit Message when a signature is created or validated.</p>
-    <h3 id="37.4.5">37.4.5 Sign using both XML and JSON options</h3>
-      <p>When the signer does not know which signature technology stack the validator is using, then the signer can choose to sign with both options.or the validator support both options</p>
     <h2 id="37.6">37.6 Cross Profile Considerations</h2>
     <p>When used with a Document Sharing infrastructure (e.g., XDS, XCA, XDM, XDR, and MHD):</p>
     <ul>
