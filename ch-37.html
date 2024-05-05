@@ -427,7 +427,9 @@
       content integrity, authenticity, and authentication of the
       identity of the signer. The identity of the signer is assured through use of Private Key and
       Public Key management. Management of Private Key and Public Keys are not addressed by this
-      profile.</p>
+      profile. 
+      <ins>The date/time of when the signature happened is critical to proving the sequence of the data over time. 
+      For a discussion on Private Key and Public Key management (PKI), and assurance of time, see the <a href="ch-37.html#37.5">Security Considerations</a> section.</ins></p>
     <h3 id="37.4.1">37.4.1 Verify Document Integrity</h3>
     <p>One purpose of use of a Digital Signature is to verify that the document being used is the same
       as the document that was signed and has not been modified by error or intent. This is called
@@ -531,7 +533,9 @@
     <h2 id="37.5">37.5 Security Considerations</h2>
     <p>Digital Signatures rely on a Private Key / Public Key Management Infrastructure (aka PKI) that
       must exist and be configured. The definition and configuration of PKI is outside the scope of
-      this document content profile. The PKI should adhere
+      this document content profile. 
+      <ins>PKI binds public keys with the respective identities of entities (like people and organizations). This binding is established through a process of registration and issuance of certificates at and by a certificate authority (CA). </ins>
+      The PKI should adhere
       to ISO TS-17090 standards for PKI in healthcare.</p>
     <p>The Detached Signature Option allows for independent management of signature document and
       content documents; thus, there is a risk they will be made unavailable through revision or access
@@ -540,6 +544,7 @@
       require a reliable date and time. There is a risk that the clock can be subverted, so operational
       controls should be used to audit clock
       modifications.</p>
+    <ins><p>Content Creator implementing the JSON Detached Signature or the JSON Enveloping Signature Options shall have access to a Time Stamping Authority (TSA) Service that meets the JSON Signature <code>tstVD</code> requirement and local policy requirements for Time Stamping Authority.</p></ins>
     <p>Content Creator and Content Consumer should be grouped with ATNA Secure Node or Secure
       Application to record an Audit Message when a signature is created or validated.</p>
     <h2 id="37.6">37.6 Cross Profile Considerations</h2>
