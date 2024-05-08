@@ -441,8 +441,8 @@
       profile. 
       <ins>The date/time of when the signature happened is critical to proving the sequence of the data over time. 
       For a discussion on Private Key and Public Key management (PKI), and assurance of time, see the <a href="ch-37.html#37.5">Security Considerations</a> section.</ins></p>
-      <ins><p>The result of creation of a Digital Signature is a new Document, the signature, the Metadata 
-        describing that signature and pointing at the document(s) that have been signed. 
+      <ins><p>The outcome is a new Document (the signature). The Metadata for the signature document 
+        also has a <code>signs</code> relationship to the signed document(s). 
         The  following Figure shows this relationship.</p>
         <div id="f37.4-1">
           <img src="media/Figure_37.4-1.png" alt="DSG Document and Signature Relationship" />
