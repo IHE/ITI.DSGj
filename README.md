@@ -1,39 +1,99 @@
-# ITI.DSGj
 
-The html pages can be viewed as [published by github pages here](https://ihe.github.io/ITI.DSGj/). Note that this does not include the CSS that will be used for formal publication in the Technical framework.
+**Integrating the Healthcare Enterprise**
 
-DSG with JSON signature
+**[IHE ITI](https://profiles.ihe.net/ITI)**
 
-- Volume 1 changes to [1:37 Document Digital Signature (DSG)](ch-37.html)
-- Volume 3 add [3:5.10 Document Digital Signature (DSG) JSON Signature Document Content](ch-5.10.html)
-- May update the xml-signature, but those likely will go into CPs to track, see below for the [issues identified in XML DSG chapter 5.5](#issues-identified-in-xml-dsg-chapter-55)
+**Technical Framework Supplement**
 
-## Zulip Chat
+**Document Digital Signature (DSG) addition of JSON Signature**
+
+**Revision 2.0 - Public Comment**
+
+Date: May 17, 2024
+
+Author: ITI Technical Committee
+
+Email: iti@ihe.net
+
+**Please verify you have the most recent version of this document.** See [here](http://profiles.ihe.net/ITI) for Trial Implementation and Final Text versions and [here](https://profiles.ihe.net/ITI/#1.3) for Public Comment versions.
+
+**Foreword**
+
+This is a supplement to the IHE IT Infrastructure Technical Framework. Each supplement undergoes a process of public comment and trial implementation before being incorporated into the volumes of the Technical Frameworks.
+
+This supplement is published on May 17, 2024 for public comment and may be available for testing at subsequent IHE Connectathons. The supplement may be amended based on the results of testing. Following successful testing it will be incorporated into the IT Infrastructure Technical Framework. Comments are invited and can be submitted using the [ITI Public Comment form](http://www.ihe.net/ITI_Public_Comments/) or by creating a [GitHub Issue](https://github.com/IHE/ITI.DSGj/issues/new?assignees=&labels=&template=public-comment-issue-template.md&title=).
 
 Discussion on [zulip chat stream: IHE DSG using JSON signature](https://chat.fhir.org/#narrow/stream/179223-ihe/topic/IHE-DSG.20using.20JSON.20Signature)
 
-## Working TCON
+This supplement describes changes to the existing technical framework documents.
 
-Weekly on Wednesday until May 10, 2024, at 7am Central, 
-[IHE ITI Teams meeting](https://teams.microsoft.com/l/meetup-join/19%3ameeting_MDk4ZDc2MjEtZGZjNy00MzY4LTg2NTgtOTc0ZWQ4YTg5Mjlm%40thread.v2/0?context=%7b%22Tid%22%3a%2202a9376b-a4f9-4a63-a240-52c43ebf9a89%22%2c%22Oid%22%3a%226459fea4-110a-4d17-85f0-00587211a0c0%22%7d)
+"Boxed" instructions like the sample below indicate to the Volume Editor how to integrate the relevant section(s) into the relevant Technical Framework volume.
 
-## Open Issues
+| **Editor: Please amend Section X.X by the following** |
+|------------------------------------------------------|
 
-#### 1. [Notes about deviation from profile are not being stated in the DSGj profile.](https://github.com/IHE/ITI.DSGj/issues/13)
+Where the amendment adds text, make the added text **<ins>bold underline</ins>**. Where the amendment removes text, make the removed text **~~bold strikethrough~~**. When entire new sections are added, introduce with editor's instructions to "add new text" or similar, which for readability are not bolded or underlined.
 
-#### 2. [The usage of DSGj with MHD(ITI-105) is not covered by the DSGj chapter.](https://github.com/IHE/ITI.DSGj/issues/14)
+General information about IHE can be found at [http://www.ihe.net](http://www.ihe.net).
 
-#### 3. [DSGj does not contain guidance around homeCommunityID](https://github.com/IHE/ITI.DSGj/issues/15)
+Information about the IHE IT Infrastructure domain can be found at [https://www.ihe.net/IHE_Domains](https://www.ihe.net/IHE_Domains/).
 
-## Issues Identified in XML DSG chapter 5.5
+Information about the organization of IHE Technical Frameworks and Supplements and the process used to create them can be found at [https://www.ihe.net/about_ihe/ihe_process](https://www.ihe.net/about_ihe/ihe_process/) and [https://www.ihe.net/resources/profiles](https://www.ihe.net/resources/profiles/).
 
-#### 1. Notes about deviation from profile to be reviewed if they need to be present
+The current version of the IHE Technical Framework can be found at [https://profiles.ihe.net/](https://profiles.ihe.net/).
 
-#### 2. The requirement of "Shall use the canonicalization algorithm “Canonical XML 1.1 with Comments” ( http://www.w3.org/2006/12/xml-c14n11#WithComments )." needs to be reviewed
- <span>The JADES specification is proposing that the signature is applied across a byte stream and makes no assumptions about the canonicalization applied and that canonicalization recommendations are made consistent by PCC dev1</span>
+# Introduction to this Supplement
 
-#### 3. Table 5.5.2-1: Digital Signature Purposes from ASTM E1762-95(2013) to be replaced by FHIR Signature Type Value Set
+## Problem Statement
 
-#### 4. Rename the volume 3 to include XML-Signature
+This profile is motivated by customer requirements for Document Digital Signatures (DSG) to use signing technology using JSON encoding vs the XML-Signature currently supported in DSG profile.
 
-#### 5. There is no guidance on encryption algorithms in the chapter at the moment. Review 5.10.2.1.1. "Alg" parameter guidance around "RS256", "ES256" to see if XML needs similar updates
+# Open Issues and Questions
+
+1. [Notes about deviation from profile are not being stated in the DSGj profile.](https://github.com/IHE/ITI.DSGj/issues/13)
+2. [The usage of DSGj with MHD(ITI-105) is not covered by the DSGj chapter.](https://github.com/IHE/ITI.DSGj/issues/14)
+3. [DSGj does not contain guidance around homeCommunityID](https://github.com/IHE/ITI.DSGj/issues/15)
+
+# Closed Issues
+
+- Will update the XML-Signature content module using a CP as some more clear descriptions have been written for the JSON Signature content module that would benefit the XML-Signature content module. These are not breaking changes.
+
+# IHE Technical Frameworks General Introduction
+The [IHE Technical Framework General Introduction](https://profiles.ihe.net/GeneralIntro/) is shared by all of the IHE domain technical frameworks. Each technical framework volume contains links to this document where appropriate.
+
+## 9 Copyright Licenses
+IHE technical documents refer to, and make use of, a number of standards developed and published by several standards development organizations. Please refer to the IHE Technical Frameworks General Introduction, Chapter 9 - [Copyright Licenses](https://profiles.ihe.net/GeneralIntro/ch-9.html) for copyright license information for frequently referenced base standards. 
+
+# IHE Technical Frameworks General Introduction Appendices
+The [IHE Technical Framework General Introduction Appendices](https://profiles.ihe.net/GeneralIntro/) are components shared by all of the IHE domain technical frameworks. Each technical framework volume contains links to these documents where appropriate. 
+
+| **Editor: Please update the following appendices to the General Introduction as indicated below. Note that these are not appendices to this domain's Technical Framework but rather, they are appendices to the IHE Technical Frameworks General Introduction.** |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+## Appendix A - Actor Summary Definitions
+
+| **Editor: no new actors** |
+|-----------------------------------------------------------------------------------------------------------------------------|
+
+## Appendix B - Transaction Summary Definitions
+
+| **Editor: no new transactions** |
+|-----------------------------------------------------------------------------------------------------------------------------|
+
+## Appendix D - Glossary
+
+| **Editor: Please add the following new or modified terms to the IHE Technical Frameworks General Introduction Appendix D:** |
+|-----------------------------------------------------------------------------------------------------------------------------|
+
+&nbsp;  
+
+| Term                                   | Definition                                                                                         |
+|-----------------------------------------------|----------------------------------------------------------------------------------------------------|
+| No new terms          |                                                              |
+
+&nbsp;
+
+# The DSG JSON Signature changes
+
+- Volume 1 changes to [1:37 Document Digital Signature (DSG)](./Volume1/ch-37.html)
+- Volume 3 add [3:5.10 Document Digital Signature (DSG) JSON Signature Document Content](./Volume3/ch-5.10.html)
