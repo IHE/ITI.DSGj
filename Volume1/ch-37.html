@@ -81,12 +81,12 @@
         document or documents in the original form. Among other
         uses, this method is recommended for use with a Document Sharing infrastructure to support
         Digital Signatures, as this method does not modify the original Document Content. This method
-        uses the Document Sharing “SIGNS” relationship provides
+        uses the Document Sharing "SIGNS" relationship provides
         linkage.</li>
       <li class="bullet-list1">A SubmissionSet Signature is a Detached Signature Document that attests
         to the content in a <del>SubmissionSet</del> <ins><a href="https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.1.2">SubmissionSet</a></ins> by: containing a manifest of all the other Documents included
         in the SubmissionSet, and a reference to the
-        SubmissionSet. The Document Sharing “SIGNS” relationship may be used but is not required.</li>
+        SubmissionSet. The Document Sharing "SIGNS" relationship may be used but is not required.</li>
     </ul>
     <p>Ink-on-paper signatures have been a part of the documentation process in health care and have
       traditionally been indicators of accountability. Reliable exchange and storage of electronic data
@@ -101,14 +101,14 @@
     <p>This profile defines only the capability for Document Digital Signature. This profile does not
       include transport, workflow, or other content profiles. The grouping of the content module
       described in this profile to specific actors is
-      described in more detail in the “Required Actor Groupings” section below.</p>
+      described in more detail in the "Required Actor Groupings" section below.</p>
     <div id="f37.1-1">
       <img src="media/Figure_37.1-1.png" alt="DSG Actor Diagram" />
       <p class="figureTitle">Figure 37.1-1: DSG Actor Diagram</p>
     </div>
     <p>Table 37.1-1 lists the content module(s) defined in the DSG Profile. To claim support with this
-      profile, an actor shall support all required content modules (labeled “R”) and may support
-      optional content modules (labeled “O”).</p>
+      profile, an actor shall support all required content modules (labeled "R") and may support
+      optional content modules (labeled "O").</p>
     <p id="t37.1-1" class="tableTitle">Table 37.1-1: DSG Profile - Actors and Content Modules</p>
     <table cellspacing="0" cellpadding="0">
       <thead>
@@ -464,8 +464,8 @@
       been modified.</p>
     <p>Another purpose of use is to verify the clinical content of a document. When a physician has
       verified that a report is complete and correct, the physician signs the document with purpose of
-      signature being “verification”. If there is ever a
-      need, the digital signature provides a mechanism to show that the “verification” was attested to
+      signature being "verification". If there is ever a
+      need, the digital signature provides a mechanism to show that the "verification" was attested to
       by the physician.</p>
     <p>For example, a clinician who needs to rely on a document which was created by another clinician
       may use a signature to ascertain that the version they are using has been verified.</p>
@@ -500,8 +500,8 @@
       </li>
     </ul>
     <p class="indent">The signatures that apply to a specific document can be found by querying (e.g.,
-      the XDS Document Registry) to obtain the “SIGNS” association linkages to that specific document.
-      The “SIGNS” associations link the Digital Signature documents with the documents signed.</p>
+      the XDS Document Registry) to obtain the "SIGNS" association linkages to that specific document.
+      The "SIGNS" associations link the Digital Signature documents with the documents signed.</p>
     <ul>
       <li class="bullet-list1">
         Search for documents, given a signature
@@ -574,7 +574,7 @@
         <a href="https://profiles.ihe.net/ITI/TF/Volume3/ch-5.5.html#5.5.6">ITI TF-3: 5.5.6</a>
         Document Sharing Metadata is used
       </li>
-      <li class="bullet-list1">The “SIGNS” association type is used to indicate relationship between
+      <li class="bullet-list1">The "SIGNS" association type is used to indicate relationship between
         signed documents and the signature document</li>
     </ul>
     <p>When no Document Sharing infrastructure is used, then the Enveloping Signature Option should be
