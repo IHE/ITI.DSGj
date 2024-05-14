@@ -7,7 +7,7 @@
 
 **Document Digital Signature (DSG) addition of JSON Signature**
 
-**Revision 2.0 - Public Comment**
+**Revision 2.0 - Draft for Public Comment**
 
 Date: May 17, 2024
 
@@ -21,7 +21,7 @@ Email: iti@ihe.net
 
 This is a supplement to the IHE IT Infrastructure Technical Framework. Each supplement undergoes a process of public comment and trial implementation before being incorporated into the volumes of the Technical Frameworks.
 
-This supplement is published on May 17, 2024 for public comment and may be available for testing at subsequent IHE Connectathons. The supplement may be amended based on the results of testing. Following successful testing it will be incorporated into the IT Infrastructure Technical Framework. Comments are invited and can be submitted using the [ITI Public Comment form](http://www.ihe.net/ITI_Public_Comments/) or by creating a [GitHub Issue](https://github.com/IHE/ITI.DSGj/issues/new?assignees=&labels=&template=public-comment-issue-template.md&title=).
+This supplement is published on May 17, 2024 for public comment Comments are invited and can be submitted using the [ITI Public Comment form](http://www.ihe.net/ITI_Public_Comments/) or by creating a [GitHub Issue](https://github.com/IHE/ITI.DSGj/issues/new?assignees=&labels=&template=public-comment-issue-template.md&title=).
 
 Discussion on [zulip chat stream: IHE DSG using JSON signature](https://chat.fhir.org/#narrow/stream/179223-ihe/topic/IHE-DSG.20using.20JSON.20Signature)
 
@@ -38,11 +38,11 @@ General information about IHE can be found at [http://www.ihe.net](http://www.ih
 
 Information about the IHE IT Infrastructure domain can be found at [https://www.ihe.net/IHE_Domains](https://www.ihe.net/IHE_Domains/).
 
-Information about the organization of IHE Technical Frameworks and Supplements and the process used to create them can be found at [https://www.ihe.net/about_ihe/ihe_process](https://www.ihe.net/about_ihe/ihe_process/) and [https://www.ihe.net/resources/profiles](https://www.ihe.net/resources/profiles/).
+Information about the organization of IHE Technical Frameworks and Supplements and the process used to create them can be found at [https://www.ihe.net/resources/profiles](https://www.ihe.net/resources/profiles/) and [https://www.ihe.net/about_ihe/ihe_process](https://www.ihe.net/about_ihe/ihe_process/).
 
 The current version of the IHE Technical Framework can be found at [https://profiles.ihe.net/](https://profiles.ihe.net/).
 
-# Introduction to this Supplement
+# Introduction to This Supplement
 
 ## Problem Statement
 
@@ -63,27 +63,39 @@ This profile is motivated by customer requirements for Document Digital Signatur
 The [IHE Technical Framework General Introduction](https://profiles.ihe.net/GeneralIntro/) is shared by all of the IHE domain technical frameworks. Each technical framework volume contains links to this document where appropriate.
 
 ## 9 Copyright Licenses
-IHE technical documents refer to, and make use of, a number of standards developed and published by several standards development organizations. Please refer to the IHE Technical Frameworks General Introduction, Chapter 9 - [Copyright Licenses](https://profiles.ihe.net/GeneralIntro/ch-9.html) for copyright license information for frequently referenced base standards. 
+IHE technical documents refer to, and make use of, a number of standards developed and published by several standards development organizations. Please refer to the IHE Technical Frameworks General Introduction, Section 9 - [Copyright Licenses](https://profiles.ihe.net/GeneralIntro/ch-9.html) for copyright license information for frequently referenced base standards. Information pertaining to the use of IHE International copyrighted materials is also available there.
+
+## 10 Trademark
+IHE® and the IHE logo are trademarks of the Healthcare Information Management Systems Society in the United States and trademarks of IHE Europe in the European Community. Please refer to the IHE Technical Frameworks General Introduction, Section 10 - [Trademark] (https://profiles.ihe.net/GeneralIntro/ch-10.html) for information on their use.
 
 # IHE Technical Frameworks General Introduction Appendices
 The [IHE Technical Framework General Introduction Appendices](https://profiles.ihe.net/GeneralIntro/) are components shared by all of the IHE domain technical frameworks. Each technical framework volume contains links to these documents where appropriate. 
 
-| **Editor: Please update the following appendices to the General Introduction as indicated below. Note that these are not appendices to this domain's Technical Framework but rather, they are appendices to the IHE Technical Frameworks General Introduction.** |
+| **Editor: Please update the following appendices to the General Introduction as indicated below. Note that these are not appendices to this domain's Technical Framework but rather, they are appendices to the IHE Technical Frameworks General Introduction located [here] (https://profiles.ihe.net/GeneralIntro/index.html.)**
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-## Appendix A - Actor Summary Definitions
+## IHE Technical Framework General Introduction Appendix A: Actors
 
-| **Editor: no new actors** |
+| **Editor: Please add the following new or modified actors to the [IHE Technical Frameworks General Introduction Appendix A](https://profiles.ihe.net/GeneralIntro/ch-A.html):** |
+
 |-----------------------------------------------------------------------------------------------------------------------------|
 
-## Appendix B - Transaction Summary Definitions
+| New or Modified Actor Name                                   | Definition                                                                          |
+|-----------------------------------------------|----------------------------------------------------------------------------------------------------|
+| No new actors          |                                                              |
 
-| **Editor: no new transactions** |
+## IHE Technical Framework General Introduction Appendix B: Transactions
+
+| **Editor: Please add the following new or modified transactions to the [IHE Technical Frameworks General Introduction Appendix B](https://profiles.ihe.net/GeneralIntro/ch-B.html):** |
 |-----------------------------------------------------------------------------------------------------------------------------|
 
-## Appendix D - Glossary
+|New or Modified Transaction Name and Number                                   | Definition                                                          |
+|-----------------------------------------------|----------------------------------------------------------------------------------------------------|
+| No new transactions                           |                                                                                                    |
 
-| **Editor: Please add the following new or modified terms to the IHE Technical Frameworks General Introduction Appendix D:** |
+## IHE Technical Framework General Introduction Appendix D: Glossary
+
+| **Editor: Please add the following new or modified terms to the [IHE Technical Frameworks General Introduction Appendix D](https://profiles.ihe.net/GeneralIntro/ch-D.html):** |
 |-----------------------------------------------------------------------------------------------------------------------------|
 
 &nbsp;  
