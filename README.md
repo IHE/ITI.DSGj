@@ -53,7 +53,8 @@ This profile is motivated by customer requirements for Document Digital Signatur
 1. [Notes about deviation from profile are not being stated in the DSGj profile.](https://github.com/IHE/ITI.DSGj/issues/13)
 2. [The usage of DSGj with MHD(ITI-105) is not covered by the DSGj chapter.](https://github.com/IHE/ITI.DSGj/issues/14)
 3. [DSGj does not contain guidance around homeCommunityID](https://github.com/IHE/ITI.DSGj/issues/15)
-4. [Will add examples after Public-Comment](https://github.com/IHE/ITI.DSGj/issues/19) 
+4. [Will add examples after Public-Comment](https://github.com/IHE/ITI.DSGj/issues/19)
+5. [Provision of a JSON Schema file](https://github.com/IHE/ITI.DSGj/issues/31)
 
 # Closed Issues
 
