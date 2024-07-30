@@ -195,7 +195,7 @@
 
         The SubmissionSet Signature shall be a Detached Signature that has references for:</p>
         <ul>
-            <li>the SubmissionSet uniqueId as per <a href="5.10.3.5.1">5.10.3.5.1 "SSId" (SubmissionSet uniqueId) Header Parameter</a></li>
+            <li>the SubmissionSet uniqueId as per <a href="5.10.3.5.1">5.10.3.5.1 "IheSSId" (SubmissionSet uniqueId) Header Parameter</a></li>
             <li>the document uniqueId for each of the documents contained in the SubmissionSet not including the SubmissionSet Signature document within the manifest as per <a href="5.10.3.1.1">above section</a></li>
         </ul>
         <p>
@@ -209,7 +209,7 @@
           <li>
               A Digital Signature document is created which includes reference of:</li>
               <ol type="i">
-                <li>The SubmissionSet.uniqueId is included in the SSId header parameter.</li>
+                <li>The SubmissionSet.uniqueId is included in the IheSSId header parameter.</li>
                 <li>All of the (n) documents to be included in the SubmissionSet, other than the signature document, are listed in the manifest.</li>
                 <li>The signature document is processed according to <a href="5.10.3">Section 5.10.3</a>, and thus signed.</li>
               </ol>
@@ -217,17 +217,17 @@
           <li>The signature document would be added to the SubmissionSet according to <a href="5.10.6">Section 5.10.6</a>. The SubmissionSet may, but is not required, include all the “SIGNS” association defined in <a href="5.10.6.4">Section 5.10.6.4</a> with associations to all the other documents in the SubmissionSet. The “SIGNS” association is redundant in this case as the SubmissionSet already groups these documents.</li>
           <li>The SubmissionSet with the (n) documents and the Digital Signature document is submitted using the Provide and Register Document Set-b [ITI-41] transaction, or equivalent from the other Document Sharing infrastructures.</li>
       </ol>
-        <h5 id="5.10.3.5.1">5.10.3.5.1 "SSId" (SubmissionSet uniqueId) Header Parameter</h4>
+        <h5 id="5.10.3.5.1">5.10.3.5.1 "IheSSId" (SubmissionSet uniqueId) Header Parameter</h4>
           <p><b>Semantics</b></p>
-          <p>The SSId header parameter shall be a new signed header parameter that qualifier the signature.</br></br>
-            The SSId header parameter's value shall specify the SubmissionSet uniqueId as per the <a href="https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.3.12">4.2.3.3.12 SubmissionSet.uniqueId</a>
+          <p>The IheSSId header parameter shall be a new signed header parameter that qualifies the signature.</br></br>
+            The IheSSId header parameter's value shall specify the SubmissionSet uniqueId as per the <a href="https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.3.12">4.2.3.3.12 SubmissionSet.uniqueId</a>
           </p>
           <p><b>Syntax</b></p>
-          <p>The SSId header parameter shall be defined as in the <mark>JSON Schema file</mark> and is copied below for information:</br></br>
+          <p>The IheSSId header parameter is defined below:</br></br>
           
-            "SSID" : {"type":"string","format":"oid"}. </br></br>
+            "IHESSID" : {"type":"string","format":"oid"}. </br></br>
 
-            <b>Note:</b> The <a href="5.10.2.1.3">crit</a> header parameter shall include the "SSId" extension header parameter when the SubmissionSet Option is used. 
+            <b>Note:</b> The <a href="5.10.2.1.3">crit</a> header parameter shall include the "IheSSId" extension header parameter when the SubmissionSet Option is used. 
           </p>
         <h3 id="5.10.4">5.10.4 JSON Enveloping Signature</h3> 
       <h4 id="5.10.4.1">5.10.4.1 Protected Header</h4>
