@@ -176,12 +176,14 @@
         <h5 id="5.10.3.1.1">5.10.3.1.1 "sigD" Header Parameter</h5>
         <ul>
           <li>sigD parameter SHALL be included as per 5.2.8.1 of the JAdES Specification</li>
-            <li>mID member SHALL be present and set to "http://uri.etsi.org/19182/ObjectIdByURIHash"</li>            
-            <li>The pars member SHALL be an array of strings that contain references to each data object* being signed. This array is considered the manifest of the data objects being signed. Each string in this array shall be a URI. See <a href="5.10.6.1.9">Section 5.10.6.1.9</a> for more details.</li>
+            <li>mID member SHALL be present and set to "http://uri.etsi.org/19182/ObjectIdByURIHash"<sup>1</sup></li>            
+            <li>The pars member SHALL be an array of strings that contain references to each data object<sup>2</sup> being signed. This array is considered the manifest of the data objects being signed. Each string in this array shall be a URI. See <a href="5.10.6.1.9">Section 5.10.6.1.9</a> for more details.</li>
             <li>The hashV, and the hashM members SHALL be present</li>
             <li>ctys member SHALL be present</li>
         </ul>
-        <p class="note">* Note: Data Objects refer to the binary representations of documents or any other content on which the digital signature is captured and verified</p>
+        <p class="note">1: For minimal interoperability and to claim conformance to IHE-DSG, the recommendation is to use the objectIdByURIHash mechanism given performance and consistency reasons, as signatures may need to be calculated on low compute devices and in distributed systems, URIs can change due to network restructuring or other factors. A hash can provide a consistent identifier that remains the same even if the underlying URI changes.
+        </p>
+        <p class="note">2: Data Objects refer to the binary representations of documents or any other content on which the digital signature is captured and verified</p>
         <h5 id="5.10.3.1.2">5.10.3.1.2 "cty" (content type) Header Parameter</h5>
           <ul><li>SHALL NOT be included</li></ul>
         <h4 id="5.10.3.2">5.10.3.2 Unprotected Header</h4>
