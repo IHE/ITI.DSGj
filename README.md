@@ -51,14 +51,14 @@ This profile is motivated by customer requirements for Document Digital Signatur
 # Open Issues and Questions
 
 1. [Notes about deviation from profile are not being stated in the DSGj profile.](https://github.com/IHE/ITI.DSGj/issues/13)
-2. [The usage of DSGj with MHD(ITI-105) is not covered by the DSGj chapter.](https://github.com/IHE/ITI.DSGj/issues/14)
-3. [DSGj does not contain guidance around homeCommunityID](https://github.com/IHE/ITI.DSGj/issues/15)
-4. [Will add examples after Public-Comment](https://github.com/IHE/ITI.DSGj/issues/19)
-5. [Provision of a JSON Schema file](https://github.com/IHE/ITI.DSGj/issues/31)
+1. [The usage of DSGj with MHD(ITI-105) is not covered by the DSGj chapter.](https://github.com/IHE/ITI.DSGj/issues/14)
+1. [DSGj does not contain guidance around homeCommunityID](https://github.com/IHE/ITI.DSGj/issues/15)
+1. [Provision of a JSON Schema file](https://github.com/IHE/ITI.DSGj/issues/31)
 
 # Closed Issues
 
-- Will update the XML-Signature content module using a CP as some more clear descriptions have been written for the JSON Signature content module that would benefit the XML-Signature content module. These are not breaking changes.
+1. Will update the XML-Signature content module using a CP as some more clear descriptions have been written for the JSON Signature content module that would benefit the XML-Signature content module. These are not breaking changes.
+1. Added examples after Public-Comment - [see ITI-Info DSG examples](https://github.com/IHE/ITI-Info/tree/master/examples/DSG)
 
 # IHE Technical Frameworks General Introduction
 The [IHE Technical Framework General Introduction](https://profiles.ihe.net/GeneralIntro/) is shared by all of the IHE domain technical frameworks. Each technical framework volume contains links to this document where appropriate.
