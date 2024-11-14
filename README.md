@@ -118,3 +118,4 @@ The [IHE Technical Framework General Introduction Appendices](https://profiles.i
 
 - Volume 1 changes to [1:37 Document Digital Signature (DSG)](./Volume1/ch-37.html)
 - Volume 3 add [3:5.10 Document Digital Signature (DSG) JSON Signature Document Content](./Volume3/ch-5.10.html)
+- Draft of a [Test Plan for JSON Signature option](https://github.com/IHE/ITI.DSGj/blob/main/TestPlan.md)
