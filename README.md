@@ -7,9 +7,9 @@
 
 **Document Digital Signature (DSG) addition of JSON Signature**
 
-**Revision 2.0 - Draft for Public Comment**
+**Revision 2.1 - Trial Implementation**
 
-Date: May 23, 2024
+Date: November 21, 2024
 
 Author: ITI Technical Committee
 
@@ -21,7 +21,7 @@ Email: iti@ihe.net
 
 This is a supplement to the IHE IT Infrastructure Technical Framework. Each supplement undergoes a process of public comment and trial implementation before being incorporated into the volumes of the Technical Frameworks.
 
-This supplement is published on May 23, 2024 for public comment Comments are invited and can be submitted using the [ITI Public Comment form](http://www.ihe.net/ITI_Public_Comments/) or by creating a [GitHub Issue](https://github.com/IHE/ITI.DSGj/issues/new?assignees=&labels=&template=public-comment-issue-template.md&title=). In order to be considered in development of the Trial Implementation version of the supplement, comments must be received by June 22, 2024. 
+This supplement is published on November 21, 2024 for trial implementation and may be available for testing at subsequent IHE Connectathons. The supplement may be amended based on the results of testing. Following successful testing it will be incorporated into the IT Infrastructure Technical Framework. Comments are invited and can be submitted using the [ITI Public Comment form](http://www.ihe.net/ITI_Public_Comments/) or by creating a [GitHub Issue](https://github.com/IHE/ITI.DSGj/issues/new?assignees=&labels=&template=public-comment-issue-template.md&title=). 
 
 Discussion on [zulip chat stream: IHE DSG using JSON signature](https://chat.fhir.org/#narrow/stream/179223-ihe/topic/IHE-DSG.20using.20JSON.20Signature).
 
@@ -114,7 +114,7 @@ The [IHE Technical Framework General Introduction Appendices](https://profiles.i
 
 &nbsp;
 
-# The DSG JSON Signature changes
+# The DSG JSON Signature Changes
 
 - Volume 1 changes to [1:37 Document Digital Signature (DSG)](./Volume1/ch-37.html)
 - Volume 3 add [3:5.10 Document Digital Signature (DSG) JSON Signature Document Content](./Volume3/ch-5.10.html)
