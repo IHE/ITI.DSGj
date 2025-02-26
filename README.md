@@ -119,3 +119,17 @@ The [IHE Technical Framework General Introduction Appendices](https://profiles.i
 - Volume 1 changes to [1:37 Document Digital Signature (DSG)](./Volume1/ch-37.html)
 - Volume 3 add [3:5.10 Document Digital Signature (DSG) JSON Signature Document Content](./Volume3/ch-5.10.html)
 - Draft of a [Test Plan for JSON Signature option](https://github.com/IHE/ITI.DSGj/blob/main/TestPlan.md)
+
+# IANA Considerations
+
+IANA is requested to register the following in the “JSON Web Signature and Encryption Header Parameters” registry:
+
+Header Parameter Name: iheSSId
+
+Header Parameter Description: The iheSSId header parameter's value shall specify the SubmissionSet.uniqueId as per the https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.3.12.
+
+Header Parameter Usage Location: JWS
+
+Change Controller: IHE ITI
+
+Specification document: https://profiles.ihe.net/ITI/DSGj/Volume3/ch-5.10.html#5.10
